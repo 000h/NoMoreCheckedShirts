@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <!-- typeAlias table별로 추가 -->
+  <configuration>
+  	<typeAliases>
+  		<typeAlias type="kr.co.nmcs.test.TestDTO" alias="tdto"/>
+  	</typeAliases>
+  </configuration>
