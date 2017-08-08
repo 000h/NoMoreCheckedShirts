@@ -1,4 +1,4 @@
-package kr.co.nmcs.account.dao;
+package kr.co.nmcs.dao;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.co.nmcs.account.dto.AccountDTO;
+import kr.co.nmcs.dto.AccountDTO;
 
 @Repository("AccountDAO")
-public class AccountDAO implements DaoA {
+public class AccountDaoImple implements AccountDao {
 
 	@Autowired
 	private SqlSession ss;

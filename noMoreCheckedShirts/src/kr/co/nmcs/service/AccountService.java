@@ -1,11 +1,10 @@
-package kr.co.nmcs.account.dao;
+package kr.co.nmcs.service;
 
 import java.util.List;
 
-import kr.co.nmcs.account.dto.AccountDTO;
+import kr.co.nmcs.dto.AccountDTO;
 
-public interface DaoA {
-
+public interface AccountService {
 	public void register(AccountDTO adto);
 
 	public void modifyAccount();

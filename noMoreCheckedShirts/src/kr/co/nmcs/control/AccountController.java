@@ -1,4 +1,4 @@
-package kr.co.nmcs.account.control;
+package kr.co.nmcs.control;
 
 import javax.annotation.Resource;
 
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.co.nmcs.account.service.AccountService;
+import kr.co.nmcs.service.AccountService;
 
 @Controller
 public class AccountController {

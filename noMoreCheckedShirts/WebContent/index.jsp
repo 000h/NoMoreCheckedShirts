@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,77 +60,28 @@
 			<!--requried-jsfiles-for owl -->
 			<!--start content-slider-->
 			<div id="owl-demo" class="owl-carousel text-center">
+				<!-- 세트 상품 회전 (최대 10개까지) -->
+				<c:forEach var="dto" items="${set10}">
 				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b1.jpg" alt="name">
+					<img class="lazyOwl" data-src="${dto.img}" alt="name">
 					<div class="item-info">
-						<h5>건방진고양이 티셔츠 워싱청바지코디입고 당당하게 살자~~</h5>
+						<h5>${dto.name}</h5>
 					</div>
 				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b2.jpg" alt="name">
-					<div class="item-info">
-						<h5>만능코디아이템 청자켓!</h5>
-					</div>
-				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b3.jpg" alt="name">
-					<div class="item-info">
-						<h5>면자켓과 데님팬츠의 편안함</h5>
-					</div>
-				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b4.jpg" alt="name">
-					<div class="item-info">
-						<h5>무난한 자연스러움 올블랙코디</h5>
-					</div>
-				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b5.jpg" alt="name">
-					<div class="item-info">
-						<h5>봄봄 느낌물씬 체크셔츠와 후드티 조합!</h5>
-					</div>
-				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b6.jpg" alt="name">
-					<div class="item-info">
-						<h5>입기만해도 시원하다!매쉬자켓코디!</h5>
-					</div>
-				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b7.jpg" alt="name">
-					<div class="item-info">
-						<h5>테이프포인트 반팔티와 청바지코디</h5>
-					</div>
-				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b8.jpg" alt="name">
-					<div class="item-info">
-						<h5>핏 좋은 청자켓 하나면 봄코디 끝</h5>
-					</div>
-				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b9.jpg" alt="name">
-					<div class="item-info">
-						<h5>댄디한 비지니스 캐주얼 코디</h5>
-					</div>
-				</div>
-				<div class="item">
-					<img class="lazyOwl" data-src="images/sample/b10.jpg" alt="name">
-					<div class="item-info">
-						<h5>누구에게나 잘 어울리는 모노톤 코디</h5>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 			<!--sreen-gallery-cursual-->
 		</div>
 	</div>
 	<div class="gallery">
 		<div class="container">
-			<h3>Featured products</h3>
+			<h3>Best Top 8</h3>
 			<div class="gallery-grids">
+				<%-- 상품 리스트 전개 (8개까지만) --%>
+				<c:forEach var="dto" items="${list}">
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.html">
-						<img src="images/sample/b1.jpg" class="img-responsive" alt="" />
+					<a href="products.html?taget=${dto.scode}">
+						<img src="${dto.img}" class="img-responsive" alt="" />
 						<div class="gallery-info">
 							<div class="quick">
 								<p>
@@ -140,197 +92,16 @@
 						</div>
 					</a>
 					<div class="galy-info">
-						<p>건방진고양이 티셔츠 워싱청바지코디</p>
+						<p>${dto.name}</p>
 						<div class="galry">
 							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
+								<h5 class="item_price">${dto.price}</h5>
 							</div>
-							<div class="rating">
-								<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-							</div>
-
 							<div class="clearfix"></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 gallery-grid">
-					<a href="products.html">
-						<img src="images/sample/b2.jpg" class="img-responsive" alt="" />
-						<div class="gallery-info">
-							<div class="quick">
-								<p>
-									<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-									view
-								</p>
-							</div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>만능코디아이템 청자켓!</p>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid">
-					<a href="products.html">
-						<img src="images/sample/b3.jpg" class="img-responsive" alt="" />
-						<div class="gallery-info">
-							<div class="quick">
-								<p>
-									<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-									view
-								</p>
-							</div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>면자켓과 데님팬츠의 편안함</p>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid">
-					<a href="products.html">
-						<img src="images/sample/b4.jpg" class="img-responsive" alt="" />
-						<div class="gallery-info">
-							<div class="quick">
-								<p>
-									<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-									view
-								</p>
-							</div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>무난한 자연스러움 올블랙코디</p>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/sample/b5.jpg"
-						class="img-responsive" alt="" />
-						<div class="gallery-info">
-							<div class="quick">
-								<p>
-									<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-									view
-								</p>
-							</div>
-						</div></a>
-					<div class="galy-info">
-						<p>봄봄 느낌물씬 체크셔츠와 후드티 조합!</p>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid">
-					<a href="products.html"><img src="images/sample/b6.jpg"
-						class="img-responsive" alt="" />
-						<div class="gallery-info">
-							<div class="quick">
-								<p>
-									<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-									view
-								</p>
-							</div>
-						</div></a>
-					<div class="galy-info simpleCart_shelfItem">
-						<p>입기만해도 시원하다!매쉬자켓코디!</p>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid">
-					<a href="products.html"><img src="images/sample/b7.jpg"
-						class="img-responsive" alt="" />
-						<div class="gallery-info">
-							<div class="quick">
-								<p>
-									<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-									view
-								</p>
-							</div>
-						</div></a>
-					<div class="galy-info simpleCart_shelfItem">
-						<p>테이프포인트 반팔티와 청바지코디</p>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid">
-					<a href="products.html"><img src="images/sample/b8.jpg"
-						class="img-responsive" alt="" />
-						<div class="gallery-info">
-							<div class="quick">
-								<p>
-									<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-									view
-								</p>
-							</div>
-						</div></a>
-					<div class="galy-info simpleCart_shelfItem">
-						<p>핏 좋은 청자켓 하나면 봄코디 끝</p>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">$95.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span> <span>☆</span>
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 				<div class="clearfix"></div>
 			</div>
 		</div>

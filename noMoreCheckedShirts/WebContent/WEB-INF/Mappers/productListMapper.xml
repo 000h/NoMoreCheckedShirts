@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.nmcs.productList">
+	<!-- 전체 조회 -->
+	<select id="selectAll" resultType="kr.co.nmcs.dto.ProductInfoDTO">
+		SELECT scode, name, price, img, info
+		  FROM productinfo
+	</select>
+	
+	<!-- 최상위 8건 까지만 조회 -->
+	<select id="selectTop8" resultType="kr.co.nmcs.dto.ProductInfoDTO">
+		SELECT scode, name, price, img, info
+		  FROM productinfo
+		 WHERE rownum <![CDATA[ <= ]]> 8
+	</select>
+	
+	<!-- 세트 상품만 조회 -->
+	<select id="selectSet" resultType="kr.co.nmcs.dto.ProductInfoDTO">
+		SELECT pi.scode as scode, pi.name as name, pi.price as price, pi.img as img, pi.info as info
+		  FROM productinfo pi, codiset c
+         WHERE pi.scode = c.scode
+           AND c.settype = 0
+	</select>
+	
+	<!-- 세트 상품만 10개 조회 -->
+	<select id="selectSet10" resultType="kr.co.nmcs.dto.ProductInfoDTO">
+		SELECT pi.scode as scode, pi.name as name, pi.price as price, pi.img as img, pi.info as info
+		  FROM productinfo pi, codiset c
+         WHERE pi.scode = c.scode
+           AND c.settype = 0
+           AND rownum <![CDATA[ <= ]]> 10
+	</select>
+</mapper>

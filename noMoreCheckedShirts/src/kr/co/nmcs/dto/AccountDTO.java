@@ -1,4 +1,4 @@
-package kr.co.nmcs.account.dto;
+package kr.co.nmcs.dto;
 
 public class AccountDTO {
 

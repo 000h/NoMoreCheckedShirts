@@ -7,7 +7,7 @@
   <configuration>
   	<typeAliases>
   		<typeAlias type="kr.co.nmcs.test.TestDTO" alias="tdto"/>
-  		<typeAlias type="kr.co.nmcs.account.dto.AccountDTO" alias="adto"/>
+  		<typeAlias type="kr.co.nmcs.dto.AccountDTO" alias="adto"/>
   	</typeAliases>
   	
   	

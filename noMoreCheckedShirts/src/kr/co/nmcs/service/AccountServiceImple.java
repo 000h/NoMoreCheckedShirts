@@ -1,4 +1,4 @@
-package kr.co.nmcs.account.service;
+package kr.co.nmcs.service;
 
 import java.util.List;
 
@@ -6,16 +6,16 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import kr.co.nmcs.account.dao.DaoA;
-import kr.co.nmcs.account.dto.AccountDTO;
+import kr.co.nmcs.dao.AccountDao;
+import kr.co.nmcs.dto.AccountDTO;
 
 @Service("accountService")
 public class AccountServiceImple implements AccountService {
 
 	@Resource(name = "AccountDAO")
-	DaoA daoA;
+	AccountDao daoA;
 
-	public void setDaoA(DaoA daoA) {
+	public void setDaoA(AccountDao daoA) {
 		this.daoA = daoA;
 	}
 
