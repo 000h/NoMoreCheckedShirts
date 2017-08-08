@@ -18,6 +18,11 @@ public interface ProductListService {
 	 * 최상위 인기 상품 8개 제품을 가져온다.
 	 * */
 	public List<ProductInfoDTO> readTop8();
+
+	/**
+	 * 세트 상품만 가져온다.
+	 * */
+	public List<ProductInfoDTO> readSetAll();
 	
 	/**
 	 * 10개의 세트 상품만 가져온다.

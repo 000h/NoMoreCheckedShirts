@@ -5,27 +5,12 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/owl.carousel.css" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords"
-		content="Swim Wear Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-	<script type="application/x-javascript">
-		 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-	</script>
-	<script src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-	<!-- cart -->
-	<script src="js/simpleCart.min.js"></script>
-	<!-- cart -->
+	<title>No More Checked Shirts</title>
+	<jsp:include page="commom/StyleScript.jsp"/>
 </head>
 <body>
 	<%-- header include --%>
-	<%@include file="commom/header.jsp"%>
+	<jsp:include page="commom/header.jsp"/>
 
 	<%-- 본분 시작 --%>
 	<div class="banner-section">
@@ -65,7 +50,7 @@
 				<div class="item">
 					<img class="lazyOwl" data-src="${dto.img}" alt="name">
 					<div class="item-info">
-						<h5>${dto.name}</h5>
+						<h5><a href="products.html?taget=${dto.scode}">${dto.name}</a></h5>
 					</div>
 				</div>
 				</c:forEach>
@@ -114,7 +99,7 @@
 	<%-- 본분 끝 --%>
 
 	<%-- fotter include --%>
-	<%@include file="commom/footer.jsp"%>
+	<jsp:include page="commom/footer.jsp"/>
 
 </body>
 </html>

@@ -17,7 +17,7 @@ public class ProductListServiceImple implements ProductListService {
 	@Resource(name="productListDao")
 	private ProductListDao dao; // DB처리 모델 객체
 	
-	// --- Override methods ---
+	// ---------- Override methods ----------
 	/**
 	 * 전체 상품 리스트를 조건없이 가져온다.
 	 * */
@@ -38,10 +38,18 @@ public class ProductListServiceImple implements ProductListService {
 	 * 10개의 세트상품 정보만 가져온다.
 	 * */
 	@Override
+	public List<ProductInfoDTO> readSetAll() {
+		return dao.selectSetAll();
+	}
+	
+	/**
+	 * 10개의 세트상품 정보만 가져온다.
+	 * */
+	@Override
 	public List<ProductInfoDTO> readSet10() {
 		return dao.selectSet10();
 	}
-	// --- Override methods end ---
+	// ---------- Override methods end ----------
 
 	// DI Setter
 	public void setDao(ProductListDao dao) {

@@ -23,6 +23,13 @@ public interface ProductListDao {
 	public List<ProductInfoDTO> selectTop8();
 	
 	/**
+	 * 세트상품 정보만 조회하여 리스트 객체로 만들어 반환한다.
+	 * 
+	 * @return List&lt;ProductInfoDTO&gt; 세트 상품리스트 dto객체들을 저장한 리스트객체
+	 * */
+	public List<ProductInfoDTO> selectSetAll();
+	
+	/**
 	 * 10개의 세트상품 정보만 조회하여 리스트 객체로 만들어 반환한다.
 	 * 
 	 * @return List&lt;ProductInfoDTO&gt; 세트 상품리스트 dto객체들을 저장한 리스트객체

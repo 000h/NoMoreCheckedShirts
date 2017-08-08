@@ -14,7 +14,7 @@ public class ProductListDaoImple implements ProductListDao {
 	@Autowired
 	private SqlSession ss; // mybatis DB 연결 세션 객체
 
-	// --- Override methods ---
+	// ---------- Override methods ----------
 	/**
 	 * 모든 데이터를 가져와 리스트 객체로 만들어 반환한다.
 	 * 
@@ -34,6 +34,16 @@ public class ProductListDaoImple implements ProductListDao {
 	public List<ProductInfoDTO> selectTop8() {
 		return ss.selectList("kr.co.nmcs.productList.selectTop8");
 	} // selectTop8 method end
+
+	/**
+	 * 세트상품 정보만 조회하여 리스트 객체로 만들어 반환한다.
+	 * 
+	 * @return List&lt;ProductInfoDTO&gt; 세트 상품리스트 dto객체들을 저장한 리스트객체
+	 * */
+	@Override
+	public List<ProductInfoDTO> selectSetAll() {
+		return ss.selectList("kr.co.nmcs.productList.selectSet");
+	} // selectSet method end
 	
 	/**
 	 * 10개의 세트상품 정보만 조회하여 리스트 객체로 만들어 반환한다.
@@ -55,11 +65,12 @@ public class ProductListDaoImple implements ProductListDao {
 	public ProductInfoDTO selectOne(int scode) {
 		return ss.selectOne("kr.co.nmcs.productList.selectOne");
 	} // selectOne method end
-	// --- Override methods end ---
+	// ---------- Override methods end ----------
 
 	// DI Setter
 	public void setSs(SqlSession ss) {
 		this.ss = ss;
 	}
+
 
 }
