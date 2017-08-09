@@ -100,10 +100,11 @@
 						</div>
 						<p class="qty"> Qty :  </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
 						<div class="btn_form">
-							<a href="#" class="add-cart item_add">ADD TO CART</a>	
+							<a href="#" class="add-cart item_add">카트에 추가</a>
+							<a href="#" class="add-cart item_add">바로 구매</a>	
 						</div>
 						<div class="tag">
-							<p>Category : <a href="#"> Bikinis </a></p>
+							<p>Category : <a href="#"> Lorem </a></p>
 							<p>Tag : <a href="#"> Lorem ipsum </a></p>
 						</div>
 					</div>

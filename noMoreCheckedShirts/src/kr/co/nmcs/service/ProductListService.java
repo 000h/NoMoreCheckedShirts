@@ -30,6 +30,11 @@ public interface ProductListService {
 	public List<ProductInfoDTO> readSet10();
 	
 	/**
+	 * 검색 키워드를 만족하는 세트 상품만 가져온다.
+	 * */
+	public List<ProductInfoDTO> readSetSearch(String search);
+	
+	/**
 	 * 해당 제품코드에 맞는 세트 상품 정보를 가져온다.
 	 * */
 	public ProductInfoDTO readOne(int scode);

@@ -43,7 +43,6 @@
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li><a href="index.html">Home</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">Men <b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-3">
@@ -153,7 +152,6 @@
 									</div>
 								</ul></li>
 							<li><a href="products.html">Top</a></li>
-							<li><a href="products.html">Bikini</a></li>
 						</ul>
 					</div>
 					<!--/.navbar-collapse-->
@@ -162,9 +160,9 @@
 			</div>
 			<div class="search-box">
 				<div id="sb-search" class="sb-search">
-					<form>
+					<form action="products.html">
 						<input class="sb-search-input"
-							placeholder="Enter your search term..." type="search"
+							placeholder="여기에 검색 키워드를 입력하세요..." type="search"
 							name="search" id="search"> <input
 							class="sb-search-submit" type="submit" value=""> <span
 							class="sb-icon-search"> </span>

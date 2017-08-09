@@ -35,7 +35,7 @@ public class ProductListServiceImple implements ProductListService {
 	}
 	
 	/**
-	 * 10개의 세트상품 정보만 가져온다.
+	 * 전체 세트상품 정보를 가져온다.
 	 * */
 	@Override
 	public List<ProductInfoDTO> readSetAll() {
@@ -48,6 +48,14 @@ public class ProductListServiceImple implements ProductListService {
 	@Override
 	public List<ProductInfoDTO> readSet10() {
 		return dao.selectSet10();
+	}
+	
+	/**
+	 * 검색 키워드를 만족하는 세트 상품만 가져온다.
+	 * */
+	@Override
+	public List<ProductInfoDTO> readSetSearch(String search) {
+		return dao.selectSetSearch(search);
 	}
 	
 	/**
@@ -71,8 +79,5 @@ public class ProductListServiceImple implements ProductListService {
 	public void setDao(ProductListDao dao) {
 		this.dao = dao;
 	}
-
-
-
 
 }

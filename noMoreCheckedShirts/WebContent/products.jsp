@@ -152,25 +152,7 @@
 								});
 							</script>
 							<!-- script -->					 
-						</section>
-						
-						<section  class="sky-form">
-							<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>DISCOUNTS</h4>
-							<div class="row row1 scroll-pane">
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Upto - 10% (20)</label>
-								</div>
-								<div class="col col-4">
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>70% - 60% (5)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>50% - 40% (7)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (2)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (5)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (7)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (2)</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other(50)</label>
-								</div>
-							</div>
-						</section>  				 
+						</section>				 
 						
 						<section  class="sky-form">
 							<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Price</h4>

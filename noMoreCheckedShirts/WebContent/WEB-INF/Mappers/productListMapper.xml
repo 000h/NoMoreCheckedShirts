@@ -35,6 +35,15 @@
            AND rownum <![CDATA[ <= ]]> 10
 	</select>
 	
+	<!-- 검색 키워드에 만족하는 세트 상품만 10개 조회 -->
+	<select id="selectSetSearch" parameterType="String" resultType="kr.co.nmcs.dto.ProductInfoDTO">
+		SELECT pi.scode as scode, pi.name as name, pi.price as price, pi.img as img, pi.info as info
+		  FROM productinfo pi, codiset c
+         WHERE pi.scode = c.scode
+           AND c.settype = 0
+           AND name like #{name}
+	</select>
+	
 	<!-- 특정 상품만 조회 -->
 	<select id="selectOne" parameterType="int" resultType="kr.co.nmcs.dto.ProductInfoDTO">
 		SELECT scode, name, price, img, info
@@ -45,10 +54,10 @@
 	<!-- 해당 세트 상품의 구성 상품들 조회 -->
 	<select id="selectCodiset" parameterType="int" resultType="kr.co.nmcs.dto.ProductInfoDTO">
 		SELECT scode, name, price, img, info
-		FROM productinfo
-		WHERE scode IN (SELECT pcode
-		                  FROM codiset
-		                 WHERE scode = #{scode}
-		                   AND pcode != #{scode})
+		  FROM productinfo
+		 WHERE scode IN (SELECT pcode
+		                   FROM codiset
+		                  WHERE scode = #{scode}
+		                    AND SETTYPE = #{scode})
 	</select>
 </mapper>

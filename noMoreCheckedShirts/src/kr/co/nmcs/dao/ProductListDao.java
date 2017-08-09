@@ -37,6 +37,13 @@ public interface ProductListDao {
 	public List<ProductInfoDTO> selectSet10();
 	
 	/**
+	 * 검색 키워드에 만족하는 세트상품 정보만 조회하여 리스트 객체로 만들어 반환한다.
+	 * 
+	 * @return List&lt;ProductInfoDTO&gt; 세트 상품리스트 dto객체들을 저장한 리스트객체
+	 * */
+	public List<ProductInfoDTO> selectSetSearch(String search);
+	
+	/**
 	 * 특정 코드의 상품 정보를 DB에서 가져와 DTO 객체로 만들어 반환한다.
 	 * 
 	 * @param scode : 상품 코드
