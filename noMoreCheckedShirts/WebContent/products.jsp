@@ -31,7 +31,7 @@
 					<%-- 세트 상품 리스트를 나열한다. --%>
 					<c:forEach var="dto" items="${setList}">
 					<div class="product-grid">
-						<a href="single.html">
+						<a href="products.html?taget=${dto.scode}">
 							<div class="more-product"><span> </span></div>
 							<div class="product-img b-link-stripe b-animate-go  thickbox">
 								<img src="${dto.img}" class="img-responsive" alt="">

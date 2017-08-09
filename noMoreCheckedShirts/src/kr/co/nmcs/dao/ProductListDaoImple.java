@@ -63,14 +63,26 @@ public class ProductListDaoImple implements ProductListDao {
 	 * */
 	@Override
 	public ProductInfoDTO selectOne(int scode) {
-		return ss.selectOne("kr.co.nmcs.productList.selectOne");
+		return ss.selectOne("kr.co.nmcs.productList.selectOne", scode);
 	} // selectOne method end
+
+	/**
+	 * 특정 코드의 상품에 구성요소가 몇개인지 확인해 반환한다.
+	 * 
+	 * @param scode : 상품 코드
+	 * @return 구성요소 개수
+	 * */
+	@Override
+	public List<ProductInfoDTO> selectCodiset(int scode) {
+		return ss.selectList("kr.co.nmcs.productList.selectCodiset", scode);
+	} // countCodiset method end
 	// ---------- Override methods end ----------
 
 	// DI Setter
 	public void setSs(SqlSession ss) {
 		this.ss = ss;
 	}
+
 
 
 }

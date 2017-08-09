@@ -49,12 +49,30 @@ public class ProductListServiceImple implements ProductListService {
 	public List<ProductInfoDTO> readSet10() {
 		return dao.selectSet10();
 	}
+	
+	/**
+	 * 해당 제품코드에 맞는 세트 상품 정보를 가져온다.
+	 * */
+	@Override
+	public ProductInfoDTO readOne(int scode) {
+		return dao.selectOne(scode);
+	}
+	
+	/**
+	 * 해당 세트 제품의 구성 제품정보를 가져온다.
+	 * */
+	@Override
+	public List<ProductInfoDTO> readCodiset(int scode) {
+		return dao.selectCodiset(scode);
+	}
 	// ---------- Override methods end ----------
 
 	// DI Setter
 	public void setDao(ProductListDao dao) {
 		this.dao = dao;
 	}
+
+
 
 
 }

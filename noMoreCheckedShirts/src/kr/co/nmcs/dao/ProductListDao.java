@@ -44,4 +44,11 @@ public interface ProductListDao {
 	 * */
 	public ProductInfoDTO selectOne(int scode);
 
+	/**
+	 * 특정 코드의 상품에 구성 제품들을 조회하여 리스트 객체로 만들어 반환한다.
+	 * 
+	 * @param scode : 상품 코드
+	 * @return 구성요소 개수
+	 * */
+	public List<ProductInfoDTO> selectCodiset(int scode);
 }

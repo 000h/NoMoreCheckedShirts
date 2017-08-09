@@ -34,4 +34,21 @@
            AND c.settype = 0
            AND rownum <![CDATA[ <= ]]> 10
 	</select>
+	
+	<!-- 특정 상품만 조회 -->
+	<select id="selectOne" parameterType="int" resultType="kr.co.nmcs.dto.ProductInfoDTO">
+		SELECT scode, name, price, img, info
+		  FROM productinfo
+		 WHERE scode = #{scode}
+	</select>
+	
+	<!-- 해당 세트 상품의 구성 상품들 조회 -->
+	<select id="selectCodiset" parameterType="int" resultType="kr.co.nmcs.dto.ProductInfoDTO">
+		SELECT scode, name, price, img, info
+		FROM productinfo
+		WHERE scode IN (SELECT pcode
+		                  FROM codiset
+		                 WHERE scode = #{scode}
+		                   AND pcode != #{scode})
+	</select>
 </mapper>
