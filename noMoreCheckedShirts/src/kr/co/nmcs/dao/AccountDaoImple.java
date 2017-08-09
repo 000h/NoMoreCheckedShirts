@@ -40,10 +40,36 @@ public class AccountDaoImple implements AccountDao {
 	@Override
 	public List<AccountDTO> accountAll() {
 		// TODO Auto-generated method stub
-		System.out.println("ss >> " + ss);
+		
 		return ss.selectList("kr.co.nmcs.account.accountAll");
 	}
-	
+
+	// 동희작업본
+
+	@Override
+	public void insertOne(AccountDTO dto) {
+		ss.insert("kr.co.nmcs.account.create", dto);
+		
+	}
+
+	@Override
+	public AccountDTO selectOne(int acode) {
+		return ss.selectOne("kr.co.nmcs.account.readOne", acode);
+	}
+
+	@Override
+	public void updateOne(AccountDTO dto) {
+		ss.update("kr.co.nmcs.account.update", dto);
+		
+	}
+
+	@Override
+	public void deleteOne(int acode) {
+		ss.delete("kr.co.nmcs.account.delete", acode);
+		
+	}
 	
 
+
+	
 }

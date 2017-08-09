@@ -12,5 +12,10 @@ public interface AccountService {
 	public void withdrawal();
 
 	public List<AccountDTO> accountAll();
-
+	
+	//동희 작업분
+	public void create(AccountDTO dto);
+	public AccountDTO readOne(int acode);
+	public void update(AccountDTO dto);
+	public void delete(int acode);
 }

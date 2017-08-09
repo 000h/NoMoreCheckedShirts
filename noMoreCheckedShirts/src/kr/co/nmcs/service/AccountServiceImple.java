@@ -43,4 +43,31 @@ public class AccountServiceImple implements AccountService {
 		return daoA.accountAll();
 	}
 
+	// 동희 작업본
+	@Override
+	public void create(AccountDTO dto) {
+		daoA.insertOne(dto);
+		
+	}
+
+	@Override
+	public AccountDTO readOne(int acode) {
+		
+		return daoA.selectOne(acode);
+	}
+
+	@Override
+	public void update(AccountDTO dto) {
+		daoA.updateOne(dto);
+		
+	}
+
+	@Override
+	public void delete(int acode) {
+		daoA.deleteOne(acode);
+		
+	}
+	
+
+
 }

@@ -5,27 +5,51 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.co.nmcs.account">
+	<!-- 동희 작업분 -->
+	<update id="update" parameterType="adto">
+		UPDATE account
+		SET  name = #{name}, hp = #{hp}, addrs = #{addrs}, postcode = #{postcode}
+		WHERE acode = #{acode}
+	</update>
+	
+	<insert id="create" parameterType="adto">
+		INSERT INTO account
+		VALUES (account_seq.nextval, #{id}, #{pw}, #{name}, #{hp}, #{addrs}, #{postcode}, 1)
+	</insert>
+	
+	<select id="readOne" parameterType="int" resultType="adto" >
+		SELECT acode, id, pw, name, hp, addrs, postcode, astatus
+		FROM  account
+		WHERE acode = #{acode}
+	</select>
+	
+	<delete id="delete" parameterType="int">
+		DELETE account
+		WHERE acode = #{acode}
+	</delete>
+	
+	<!--  -->
 	<select id="accountAll" resultType="adto">
 		SELECT * FROM account
 	</select>
 
-	<select id="register" parameterType="adto">
+	<insert id="register" parameterType="adto">
 		INSERT INTO account(acode,
 		id, pw, name, hp, addrs, postcode, astatus)
-		VALUES (account_seq, #{id},
+		VALUES (account_seq.nextval, #{id},
 		#{pw}, #{name}, #{hp}, #{addrs}, #{postcode}, 0)
-	</select>
+	</insert>
 
-	<select id="modifyAccount" parameterType="adto">
+	<update id="modifyAccount" parameterType="adto">
 		UPDATE account
 		SET
 		pw=#{pw}, #{name}, #{hp}, #{addrs}, #{postcode}, #{astatus}
 		WEHRE
 		acode=#{acode}
-	</select>
+	</update>
 
-	<select id="withdrawal">
+	<delete id="withdrawal">
 		DELETE account
 		WHERE acode=#{acode}
-	</select>
+	</delete>
 </mapper>
