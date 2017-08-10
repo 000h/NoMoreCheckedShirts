@@ -27,7 +27,11 @@
 				<ul class="dropdown-menu">
 					<li><a href="NTreadAll">주문보기</a></li>
 				</ul></li>
-			<li><a href="#">Menu 3</a></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">상품관리 <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="NPinsertMain">제품등록</a></li>
+				</ul></li>
 		</ul>
 		<div id="main">
 			<div class="container">
@@ -47,7 +51,8 @@
 						</tr>
 						<c:forEach var="r" items="${read }">
 							<tr>
-								<td><input type="checkbox" name="acode" id="" value="${r.acode }" /></td>
+								<td><input type="checkbox" name="acode" id=""
+									value="${r.acode }" /></td>
 								<td>${r.acode }</td>
 								<td>${r.id }</td>
 								<td><a href="NAreadOne?acode=${r.acode }">${r.name }</a></td>
@@ -57,11 +62,9 @@
 								<td>${r.astatus }</td>
 							</tr>
 						</c:forEach>
-							<tr>
-								<td colspan="8">
-									<input type="submit" value="삭제" />
-								</td>
-							</tr>
+						<tr>
+							<td colspan="8"><input type="submit" value="삭제" /></td>
+						</tr>
 					</table>
 				</form>
 			</div>
