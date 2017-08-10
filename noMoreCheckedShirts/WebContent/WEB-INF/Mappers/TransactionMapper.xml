@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.nmcs.transaction">
+	<select id="selectAll" resultType="tdto">
+		SELECT t.tcode, a.id, t.tradate, t.trastatus
+		FROM transaction t, account a
+		WHERE t.acode = a.acode
+	</select>
+
+	<select id="selectRev" resultType="tdto" parameterType="int">
+		SELECT rname, rhp, raddrs, rpost
+		FROM transaction
+		WHERE tcode = #{tcode}
+	</select>
+
+	<select id="selectAccount" resultType="tdto" parameterType="String">
+		SELECT name, hp, addrs, postcode
+		FROM account
+		WHERE id = #{id}
+	</select>
+
+	<select id="selectInfo" resultType="tdto" parameterType="int">
+		select name, price, info
+		from productinfo
+		where scode = (select scode
+		from orderlist
+		where ocode = (select ocode
+		from transaction
+		where tcode = #{tcode}))
+
+	</select>
+</mapper>

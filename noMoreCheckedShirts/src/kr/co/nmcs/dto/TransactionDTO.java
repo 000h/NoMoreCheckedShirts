@@ -10,30 +10,69 @@ public class TransactionDTO {
 	private String rhp;
 	private String raddrs;
 	private String rpost;
+	// join
+	private String id;
+	private String name;
+	private String hp;
+	private String addrs;
+	private String postcode;
+	private int price;
+	private String info;
 
-	public TransactionDTO() {
-
+	public int getPrice() {
+		return price;
 	}
 
-	public TransactionDTO(int tcode, int ocode, int acode, String rname, String tradate, int trastatus, String rhp,
-			String raddrs, String rpost) {
-
-		this.tcode = tcode;
-		this.ocode = ocode;
-		this.acode = acode;
-		this.rname = rname;
-		this.tradate = tradate;
-		this.trastatus = trastatus;
-		this.rhp = rhp;
-		this.raddrs = raddrs;
-		this.rpost = rpost;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "TransactionDTO [tcode=" + tcode + ", ocode=" + ocode + ", acode=" + acode + ", rname=" + rname
-				+ ", tradate=" + tradate + ", trastatus=" + trastatus + ", rhp=" + rhp + ", raddrs=" + raddrs
-				+ ", rpost=" + rpost + "]";
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getHp() {
+		return hp;
+	}
+
+	public void setHp(String hp) {
+		this.hp = hp;
+	}
+
+	public String getAddrs() {
+		return addrs;
+	}
+
+	public void setAddrs(String addrs) {
+		this.addrs = addrs;
+	}
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public int getTcode() {
