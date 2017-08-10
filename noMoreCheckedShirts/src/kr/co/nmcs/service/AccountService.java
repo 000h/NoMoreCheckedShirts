@@ -15,7 +15,7 @@ public interface AccountService {
 	
 	public AccountDTO login(String id, String pw);
 	
-	public void logout();
+	public String logout();
 	
 	//동희 작업분
 	public void create(AccountDTO dto);

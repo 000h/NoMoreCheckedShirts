@@ -17,7 +17,7 @@ public interface AccountDao {
 	
 	public AccountDTO login(String id, String pw);
 	
-	public void logout();
+	public String logout();
 	
 	//동희 작업분
 	public void insertOne(AccountDTO dto);

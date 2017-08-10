@@ -824,6 +824,13 @@ p span.overline{
 	font-size:0.8125em;
 	padding: 0.5em;
 }
+.login-right input[type="password"] {
+	border: 1px solid #555;
+	outline-color:#08538C;
+	width: 96%;
+	font-size:0.8125em;
+	padding: 0.5em;
+}
 .login-right input[type="submit"] {
 	border: 2px solid #000;
 	color: #000;

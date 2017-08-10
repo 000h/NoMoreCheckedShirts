@@ -62,8 +62,9 @@ public class AccountDaoImple implements AccountDao {
 
 	/* 로그아웃 */
 	@Override
-	public void logout() {
+	public String logout() {
 		// TODO Auto-generated method stub
+		return "index";
 	}
 
 	// 동희작업본

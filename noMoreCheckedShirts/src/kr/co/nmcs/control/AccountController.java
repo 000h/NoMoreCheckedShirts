@@ -140,6 +140,8 @@ public class AccountController {
 		 * String id = req.getParameter("id"); String pw = req.getParameter("pw");
 		 */
 		
+		
+		
 		//String dbid = adto.getId();
 		//String dbpw = adto.getPw();
 
@@ -159,9 +161,22 @@ public class AccountController {
 			System.out.println("로그인실패");
 		}else {
 			System.out.println("로그인 성공  id:" + dto.getId());
+			System.out.println("로그인 성공  acode:" + dto.getAcode());
+			System.out.println("로그인 성공  name:" + dto.getName());
+			ss.setAttribute("id", dto.getId());
+			ss.setAttribute("acode", dto.getAcode());
+			ss.setAttribute("name", dto.getName());
+			
+			System.out.println("session creation time : " +	ss.getCreationTime()); 
+			System.out.println("session get Id : " + ss.getId());
+			System.out.println("session attribute names : " + ss.getAttributeNames().toString());
+			
+			
+			
+			
+			
 		}
 		
-		ss.setAttribute("id", dto.getId());
 //
 //		// 세션 객체 생성
 //		HttpSession session = req.getSession();
@@ -184,16 +199,30 @@ public class AccountController {
 		return new ModelAndView("index");
 	}
 
-	@RequestMapping("/logout")
+	@RequestMapping("/logoutTestOk")
 	public String logout(HttpServletRequest req, HttpServletResponse resp, 
 			@ModelAttribute("adto") AccountDTO adto, HttpSession ss) {
-		//req.isRequestedSessionIdValid();
+
+
+/*		System.out.println("session creation time : " +	ss.getCreationTime()); 
+		System.out.println("session get Id : " + ss.getId());
+		System.out.println("session attribute names : " + ss.getAttributeNames());
+		*/
+		
+		
+		System.out.println("세션에 있는 모든 객체 삭제");
+		
 		//	세션에 저장된 객체 모두 없애기
-		ss.invalidate();
+		 ss.invalidate(); 
 		
 		//	선택해서 없애기
 		//ss.remove("key");
-		return "logout";
+
+		/*System.out.println("session creation time : " +	ss.getCreationTime()); 
+		System.out.println("session get Id : " + ss.getId());
+		System.out.println("session attribute names : " + ss.getAttributeNames());*/
+
+		return "index";
 	}
 
 }

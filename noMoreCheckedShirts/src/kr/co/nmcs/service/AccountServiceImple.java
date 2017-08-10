@@ -50,9 +50,10 @@ public class AccountServiceImple implements AccountService {
 	}
 
 	@Override
-	public void logout() {
+	public String logout() {
 		// TODO Auto-generated method stub
-
+		daoA.logout();
+		return "redirect:/index";
 	}
 
 	// 동희 작업본
