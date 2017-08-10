@@ -13,6 +13,10 @@ public interface AccountService {
 
 	public List<AccountDTO> accountAll();
 	
+	public AccountDTO login(String id, String pw);
+	
+	public void logout();
+	
 	//동희 작업분
 	public void create(AccountDTO dto);
 	public AccountDTO readOne(int acode);

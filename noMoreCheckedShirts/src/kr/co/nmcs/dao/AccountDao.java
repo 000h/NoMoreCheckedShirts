@@ -6,6 +6,7 @@ import kr.co.nmcs.dto.AccountDTO;
 
 public interface AccountDao {
 	
+
 	public void register(AccountDTO adto);
 
 	public void modifyAccount();
@@ -13,6 +14,10 @@ public interface AccountDao {
 	public void withdrawal();
 
 	public List<AccountDTO> accountAll();
+	
+	public AccountDTO login(String id, String pw);
+	
+	public void logout();
 	
 	//동희 작업분
 	public void insertOne(AccountDTO dto);

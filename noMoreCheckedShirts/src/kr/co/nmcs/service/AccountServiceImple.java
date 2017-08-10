@@ -28,7 +28,7 @@ public class AccountServiceImple implements AccountService {
 	@Override
 	public void modifyAccount() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -41,6 +41,18 @@ public class AccountServiceImple implements AccountService {
 	public List<AccountDTO> accountAll() {
 		// TODO Auto-generated method stub
 		return daoA.accountAll();
+	}
+
+	@Override
+	public AccountDTO login(String id, String pw) {
+		// TODO Auto-generated method stub
+		return daoA.login(id, pw);
+	}
+
+	@Override
+	public void logout() {
+		// TODO Auto-generated method stub
+
 	}
 
 	// 동희 작업본

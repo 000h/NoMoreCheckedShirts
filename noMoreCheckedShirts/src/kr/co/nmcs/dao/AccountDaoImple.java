@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.co.nmcs.dto.AccountDTO;
+import kr.co.nmcs.dto.AccountIdPw;
 
 @Repository("AccountDAO")
 public class AccountDaoImple implements AccountDao {
@@ -42,6 +43,27 @@ public class AccountDaoImple implements AccountDao {
 		// TODO Auto-generated method stub
 		
 		return ss.selectList("kr.co.nmcs.account.accountAll");
+	}
+	
+	/* 로그인 */
+	@Override
+	public AccountDTO login(String id, String pw) {
+		// TODO Auto-generated method stub
+		System.out.println("ss >> " + ss); // 연결 확인용 코드
+		AccountIdPw idpw = new AccountIdPw();
+		idpw.setId(id);
+		idpw.setPw(pw);		
+//		
+//		ModelAndView mav = new ModelAndView();
+//		mav.addObject(dto);
+//		mav.setViewName("loginOk2");
+		return ss.selectOne("kr.co.nmcs.account.loginCk", idpw);
+	}
+
+	/* 로그아웃 */
+	@Override
+	public void logout() {
+		// TODO Auto-generated method stub
 	}
 
 	// 동희작업본

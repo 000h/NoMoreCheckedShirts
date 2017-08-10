@@ -9,6 +9,7 @@
 
   		<typeAlias type="kr.co.nmcs.dto.AccountDTO" alias="adto"/>
   		<typeAlias type="kr.co.nmcs.dto.TransactionDTO" alias="tdto"/>
+  		<typeAlias type="kr.co.nmcs.dto.AccountIdPw" alias="idpw"/>
   	</typeAliases>
   	
   	

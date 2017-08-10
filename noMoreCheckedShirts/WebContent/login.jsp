@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!--
-Au<!--
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -21,10 +20,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords"
 	content="Swim Wear Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="application/x-javascript">
+	
+	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+</script>
 <script src="js/jquery.min.js"></script>
 <!-- cart -->
-<script src="js/simpleCart.min.js"> </script>
+<script src="js/simpleCart.min.js">
+	
+</script>
 <!-- cart -->
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 <script src="js/imagezoom.js"></script>
@@ -35,13 +40,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	media="screen" />
 
 <script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    controlNav: "thumbnails"
-  });
-});
+	// Can also be used with $(document).ready()
+	$(window).load(function() {
+		$('.flexslider').flexslider({
+			animation : "slide",
+			controlNav : "thumbnails"
+		});
+	});
 </script>
 
 
@@ -68,12 +73,14 @@ $(window).load(function() {
 						<div class="col-md-6 login-right">
 							<h3>REGISTERED CUSTOMERS</h3>
 							<p>If you have an account with us, please log in.</p>
-							<form>
+							<form action="loginOk">   <!-- 값 넘어가는것 확인 후에 POST로 바꿀 것! -->
 								<div>
-									<span>ID<label>*</label></span> <input type="text">
+									<span>ID<label>*</label></span> 
+									<input type="text" name="id" id="id">
 								</div>
 								<div>
-									<span>Password<label>*</label></span> <input type="password">
+									<span>Password<label>*</label></span> 
+									<input type="password" name="pw" id="pw">
 								</div>
 								<!-- <a class="forgot" href="#">Forgot Your Password?</a> -->
 								<input type="submit" value="Login">
@@ -88,7 +95,7 @@ $(window).load(function() {
 	<!-- login -->
 	<div class="subscribe">
 		<div class="container">
-			<div class="subscribe1">
+			<!-- <div class="subscribe1">
 				<h4>the latest from swim wear</h4>
 			</div>
 			<div class="subscribe2">
@@ -98,7 +105,7 @@ $(window).load(function() {
 						onblur="if (this.value == '') {this.value = 'Email';}"> <input
 						type="submit" value="JOIN">
 				</form>
-			</div>
+			</div> -->
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -129,5 +136,6 @@ $(window).load(function() {
 		
 	
 	</table> -->
+
 
 

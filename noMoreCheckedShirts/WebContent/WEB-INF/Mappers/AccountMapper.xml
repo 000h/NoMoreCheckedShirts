@@ -6,41 +6,50 @@
 
 <mapper namespace="kr.co.nmcs.account">
 	<!-- 동희 작업분 -->
-	
-	<!-- 회원정보 관련 sql  -->
+
+	<!-- 회원정보 관련 sql -->
 	<update id="update" parameterType="adto">
 		UPDATE account
-		SET  name = #{name}, hp = #{hp}, addrs = #{addrs}, postcode = #{postcode}
-		WHERE acode = #{acode}
+		SET name =
+		#{name}, hp = #{hp}, addrs = #{addrs}, postcode = #{postcode}
+		WHERE
+		acode = #{acode}
 	</update>
-	
+
 	<insert id="create" parameterType="adto">
 		INSERT INTO account
-		VALUES (account_seq.nextval, #{id}, #{pw}, #{name}, #{hp}, #{addrs}, #{postcode}, 1)
+		VALUES
+		(account_seq.nextval, #{id}, #{pw}, #{name}, #{hp}, #{addrs},
+		#{postcode}, 1)
 	</insert>
-	
-	<select id="readOne" parameterType="int" resultType="adto" >
+
+	<select id="readOne" parameterType="int" resultType="adto">
 		SELECT acode, id, pw, name, hp, addrs, postcode, astatus
-		FROM  account
+		FROM account
 		WHERE acode = #{acode}
 	</select>
-	
+
 	<delete id="delete" parameterType="int">
 		DELETE account
-		WHERE acode = #{acode}
+		WHERE acode =
+		#{acode}
 	</delete>
-	
-	<!--  -->
+
+	<!-- 지수 -->
 	<select id="accountAll" resultType="adto">
 		SELECT * FROM account
 	</select>
 
+
 	<insert id="register" parameterType="adto">
 		INSERT INTO account(acode,
-		id, pw, name, hp, addrs, postcode, astatus)
-		VALUES (account_seq.nextval, #{id},
-		#{pw}, #{name}, #{hp}, #{addrs}, #{postcode}, 0)
+		id, pw, name,
+		hp, addrs, postcode, astatus)
+		VALUES (account_seq, #{id},
+		#{pw},
+		#{name}, #{hp}, #{addrs}, #{postcode}, 0)
 	</insert>
+
 
 	<update id="modifyAccount" parameterType="adto">
 		UPDATE account
@@ -50,8 +59,25 @@
 		acode=#{acode}
 	</update>
 
-	<delete id="withdrawal">
+
+	<delete id="widrawal">
 		DELETE account
 		WHERE acode=#{acode}
 	</delete>
+
+
+	<select id="loginCk" parameterType="idpw" resultType="adto">
+		SELECT *
+		FROM account
+		WHERE id=#{id} AND PW=#{pw}
+
+	</select>
+
+
+	<select id="selectUser" parameterType="adto" resultType="adto">
+		SELECT *
+		FROM account
+		WHERE acode = #{acode} and id=#{id} AND name=#{name}
+	</select>
+
 </mapper>
