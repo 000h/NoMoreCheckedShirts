@@ -1,6 +1,9 @@
 package kr.co.nmcs.control;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -117,6 +120,80 @@ public class AccountController {
 		mav.addObject("accountList", as.accountAll());
 		mav.setViewName("accountList");
 		return mav;
+	}
+	
+	
+	
+	
+	
+	/* 로그인 */
+	@RequestMapping("/login.html")
+	public String login() {
+
+		return "login";
+	}
+
+	@RequestMapping("/loginOk")
+	public ModelAndView loginOk(HttpServletRequest req, HttpServletResponse resp,
+			@ModelAttribute("adto") AccountDTO adto, HttpSession ss) {
+		/*
+		 * String id = req.getParameter("id"); String pw = req.getParameter("pw");
+		 */
+		
+		//String dbid = adto.getId();
+		//String dbpw = adto.getPw();
+
+		/* 체크하는 부분 */
+
+		// 아이디와 패스워드 저장
+		String id = req.getParameter("id");
+		String pw = req.getParameter("pw");
+		/*
+		 * String acode = req.getParameter("acode"); String name =
+		 * req.getParameter("name");
+		 */
+		
+		AccountDTO dto = as.login(id, pw);
+		
+		if(dto==null) {
+			System.out.println("로그인실패");
+		}else {
+			System.out.println("로그인 성공  id:" + dto.getId());
+		}
+		
+		ss.setAttribute("id", dto.getId());
+//
+//		// 세션 객체 생성
+//		HttpSession session = req.getSession();
+//
+//		// 페이지 이동 지정
+//		RequestDispatcher dis = req.getRequestDispatcher("loginOk");
+//
+//		// id가 db와 맞으면 세션에 저장
+//		if (id.equals("dbid") && pw.equals("dbpw")) {
+//			session.setAttribute("id", id);
+//			/*
+//			 * session.setAttribute("acode", acode); session.setAttribute("name", name);
+//			 */
+//		} else {
+//			System.out.println("로그인되지 않았습니다");
+//		}
+//
+
+
+		return new ModelAndView("index");
+	}
+
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest req, HttpServletResponse resp, 
+			@ModelAttribute("adto") AccountDTO adto, HttpSession ss) {
+		//req.isRequestedSessionIdValid();
+		//	세션에 저장된 객체 모두 없애기
+		ss.invalidate();
+		
+		//	선택해서 없애기
+		//ss.remove("key");
+		return "logout";
 	}
 
 }
