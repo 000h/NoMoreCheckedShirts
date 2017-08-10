@@ -12,6 +12,15 @@
 	<!-- 회원가입 확인페이지 -->
 
 	**님 가입을 환영합니다
+	
+	ID : ${id }
+	PW : ${pw }
+	rePW : ${ repw }
+	name : ${name }
+	hp : ${hp }
+	postcode : ${postcode }
+	addrs : ${addrs }
+	
 
 
 </body>

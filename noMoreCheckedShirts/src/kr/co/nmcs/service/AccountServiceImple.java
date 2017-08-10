@@ -23,6 +23,7 @@ public class AccountServiceImple implements AccountService {
 	public void register(AccountDTO adto) {
 		// TODO Auto-generated method stub
 		daoA.register(adto);
+
 	}
 
 	@Override

@@ -824,6 +824,8 @@ p span.overline{
 	font-size:0.8125em;
 	padding: 0.5em;
 }
+
+/*170810 추가*/
 .login-right input[type="password"] {
 	border: 1px solid #555;
 	outline-color:#08538C;
@@ -831,6 +833,7 @@ p span.overline{
 	font-size:0.8125em;
 	padding: 0.5em;
 }
+/*여기까지*/
 .login-right input[type="submit"] {
 	border: 2px solid #000;
 	color: #000;
@@ -869,6 +872,15 @@ p span.overline{
 	text-transform: uppercase;
 }
 .register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
+	border: 1px solid #555;
+	outline-color:#FD9F3E;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+}
+
+/*170810 수정 */
+.register-top-grid input[type="password"], .register-bottom-grid input[type="password"] {
 	border: 1px solid #555;
 	outline-color:#FD9F3E;
 	width: 96%;

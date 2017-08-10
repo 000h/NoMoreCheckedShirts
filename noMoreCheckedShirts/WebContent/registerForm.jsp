@@ -78,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="main-1">
 			<div class="container">
 				<div class="register">
-					<form>
+					<form action="register">
 
 						<div class="register-top-grid">
 							<h3>TERMS</h3>
@@ -107,27 +107,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>ID<label>*</label></span> <input type="text">
+								<span>ID<label>*</label></span> 
+								<input type="text" id="id" name = "id">
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Name<label>*</label></span> <input type="text">
+								<span>Name<label>*</label></span> 
+								<input type="text" id="name" name = "name">
 							</div>
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>Password<label>*</label></span> <input type="text">
+								<span>Password<label>*</label></span> 
+								<input type="password" id="pw" name = "pw">
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Confirm Password<label>*</label></span> <input type="text">
-							</div>
-
-							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>HP<label>*</label></span> <input type="text">
-							</div>
-							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>POST CODE<label>*</label></span> <input type="text">
+								<span>Confirm Password<label>*</label></span> 
+								<input type="password" id="repw" name = "repw">
 							</div>
 
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Address<label>*</label></span> <input type="text">
+								<span>HP<label>*</label></span> 
+								<input type="text" id="hp" name = "hp">
+							</div>
+							<div class="wow fadeInRight" data-wow-delay="0.4s">
+								<span>POST CODE<label>*</label></span> 
+								<input type="text" id = "postcode" name = "postcode">
+							</div>
+
+							<div class="wow fadeInRight" data-wow-delay="0.4s">
+								<span>Address<label>*</label></span> 
+								<input type="text" id="addrs" name = "addrs">
 							</div>
 
 							<div class="clearfix"></div>
@@ -147,10 +154,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</a>
 
 						</div> -->
-					</form>
+					
 					<div class="clearfix"></div>
 					<div class="register-but">
-						<form>
+					
 							<center>
 								<input type="submit" value="submit">
 								<!-- 		<div class="clearfix"></div> -->
