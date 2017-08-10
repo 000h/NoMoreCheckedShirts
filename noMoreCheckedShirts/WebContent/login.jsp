@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -46,13 +47,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			animation : "slide",
 			controlNav : "thumbnails"
 		});
+		
 	});
+	
+	
 </script>
 
 
 
 </head>
 <body>
+	
 	<%-- header include --%>
 	<%@include file="commom/header.jsp"%>
 
@@ -112,7 +117,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<%-- fotter include --%>
 	<%@include file="commom/footer.jsp"%>
+	
+
+	<%-- <c:if test="${dto eq null}&& ${id != null}">
+		<script type="text/javascript">
+			alert("헐");
+		</script>
+	</c:if> --%>
+	
 </body>
+	
+
 </html>
 
 <!-- <h2>로그인</h2>

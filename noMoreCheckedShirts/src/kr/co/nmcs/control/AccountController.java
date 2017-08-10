@@ -165,7 +165,13 @@ public class AccountController {
 
 		if (dto == null) {
 			System.out.println("로그인실패");
-			return new ModelAndView("login", "dto", dto);
+			System.out.println(dto);
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("id", id);
+			mav.addObject("pw", pw);
+			mav.addObject("dto", dto);
+			mav.setViewName("login");
+			return mav;
 			
 		} else {
 			System.out.println("로그인 성공  id:" + dto.getId());
