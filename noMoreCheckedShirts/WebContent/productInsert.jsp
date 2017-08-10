@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>traInfo.jsp</title>
+<title>productInsert.jsp</title>
 <jsp:include page="commom/StyleScript.jsp" />
 
 </head>
@@ -34,29 +34,19 @@
 				</ul></li>
 		</ul>
 
-		<div class="main">
-			<br>
-			<h1>주문상세정보</h1>
-			<br>
-			<table class="table table-striped">
-				<tr>
-					<th>제품명</th>
-					<th>가격</th>
-					<th>상세정보</th>
-				</tr>
-				<tr>
-					<td>${readInfo.name }</td>
-					<td>${readInfo.price }</td>
-					<td>${readInfo.info }</td>
-				</tr>
-				<tr>
-					<td colspan="4">
-						<a href="NTreadAll"><input type="button" value="뒤로가기" /></a>
-					</td>
-				</tr>
-			</table>
-
-		</div>
+		<form action="NPinsert">
+			<div class="form-group">
+				<label for="name">제품명:</label> <input type="text" class="form-control" name="name"> 
+					<br> 
+				<label for="sel2">제품의 종류를 선택해주세요</label> 
+				<select multiple class="form-control" name="type">
+					<c:forEach var="t" items="${type }">
+						<option>${t.type}</option>
+					</c:forEach>					
+				</select>
+			</div>
+			<button type="submit" class="btn btn-default">등록하기</button>
+		</form>
 	</div>
 
 	<jsp:include page="commom/footer.jsp" />

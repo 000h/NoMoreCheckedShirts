@@ -27,12 +27,16 @@
 				<ul class="dropdown-menu">
 					<li><a href="NTreadAll">주문보기</a></li>
 				</ul></li>
-			<li><a href="#">Menu 3</a></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">상품관리 <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="NPinsertMain">제품등록</a></li>
+				</ul></li>
 		</ul>
 
 		<div class="main">
 			<br>
-			<h1>주문정보</h1>
+			<h1>수령인정보</h1>
 			<br>
 			<table class="table table-striped">
 				<tr>
@@ -53,7 +57,6 @@
 					</td>
 				</tr>
 			</table>
-
 		</div>
 	</div>
 

@@ -26,43 +26,45 @@
 				<ul class="dropdown-menu">
 					<li><a href="NTreadAll">주문보기</a></li>
 				</ul></li>
-			<li><a href="#">Menu 3</a></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">상품관리 <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="NPinsertMain">제품등록</a></li>
+				</ul></li>
 		</ul>
 		<div id="main">
 			<form action="NAcreate" method="post">
-			<br>
-			<h1>관리자 정보를 입력해주세요</h1>
-			<table class="table table-striped">
-				<tr>
-					<td>계정명 </td>
-					<td><input type="text" name="id" id="" /></td>
-				</tr>
-				<tr>
-					<td>비밀번호 </td>
-					<td><input type="text" name="pw" id="" /></td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td><input type="text" name="name" id="" /></td>
-				</tr>
-				<tr>
-					<td>전화번호</td>
-					<td><input type="text" name="hp" id="" /></td>
-				</tr>
-				<tr>
-					<td>주소</td>
-					<td><input type="text" name="addrs" id="" /></td>
-				</tr>
-				<tr>
-					<td>우편번호</td>
-					<td><input type="text" name="postcode" id="" /></td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<input type="submit" value="등록하기" />
-					</td>
-				</tr>
-			</table>
+				<br>
+				<h1>관리자 정보를 입력해주세요</h1>
+				<table class="table table-striped">
+					<tr>
+						<td>계정명</td>
+						<td><input type="text" name="id" id="" /></td>
+					</tr>
+					<tr>
+						<td>비밀번호</td>
+						<td><input type="text" name="pw" id="" /></td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td><input type="text" name="name" id="" /></td>
+					</tr>
+					<tr>
+						<td>전화번호</td>
+						<td><input type="text" name="hp" id="" /></td>
+					</tr>
+					<tr>
+						<td>주소</td>
+						<td><input type="text" name="addrs" id="" /></td>
+					</tr>
+					<tr>
+						<td>우편번호</td>
+						<td><input type="text" name="postcode" id="" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="등록하기" /></td>
+					</tr>
+				</table>
 			</form>
 		</div>
 	</div>

@@ -26,9 +26,13 @@
 				<ul class="dropdown-menu">
 					<li><a href="NTreadAll">주문보기</a></li>
 				</ul></li>
-			<li><a href="#">Menu 3</a></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">상품관리 <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="NPinsertMain">제품등록</a></li>
+				</ul></li>
 		</ul>
-		
+
 		<div class="main">
 			<br>
 			<h2>관리자 페이지입니다</h2>
