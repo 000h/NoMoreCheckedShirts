@@ -24,9 +24,11 @@
 	</insert>
 
 	<select id="readOne" parameterType="int" resultType="adto">
-		SELECT acode, id, pw, name, hp, addrs, postcode, astatus
+		SELECT
+		acode, id, pw, name, hp, addrs, postcode, astatus
 		FROM account
-		WHERE acode = #{acode}
+		WHERE
+		acode = #{acode}
 	</select>
 
 	<delete id="delete" parameterType="int">
@@ -45,7 +47,8 @@
 		INSERT INTO account(acode,
 		id, pw, name,
 		hp, addrs, postcode, astatus)
-		VALUES (account_seq.nextval, #{id},
+		VALUES (account_seq.nextval,
+		#{id},
 		#{pw},
 		#{name}, #{hp}, #{addrs}, #{postcode}, 0)
 	</insert>
@@ -78,6 +81,13 @@
 		SELECT *
 		FROM account
 		WHERE acode = #{acode} and id=#{id} AND name=#{name}
+	</select>
+
+
+	<select id="IdCk" parameterType="adto" resultType="adto">
+		SELECT NVL(COUNT(*),0)
+		FROM account
+		WHERE id=#{id}
 	</select>
 
 </mapper>

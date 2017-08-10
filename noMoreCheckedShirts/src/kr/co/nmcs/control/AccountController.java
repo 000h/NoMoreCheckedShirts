@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.nmcs.dto.AccountDTO;
@@ -164,6 +165,8 @@ public class AccountController {
 
 		if (dto == null) {
 			System.out.println("로그인실패");
+			return new ModelAndView("login", "dto", dto);
+			
 		} else {
 			System.out.println("로그인 성공  id:" + dto.getId());
 			System.out.println("로그인 성공  acode:" + dto.getAcode());
@@ -176,6 +179,7 @@ public class AccountController {
 			System.out.println("session get Id : " + ss.getId());
 			System.out.println("session attribute names : " + ss.getAttributeNames().toString());
 
+			return new ModelAndView("index", "dto", dto);
 		}
 
 		//
@@ -196,9 +200,10 @@ public class AccountController {
 		// }
 		//
 
-		return new ModelAndView("index");
 	}
 
+	
+	/* 로그아웃 */
 	@RequestMapping("/logoutTestOk")
 	public String logout(HttpServletRequest req, HttpServletResponse resp, @ModelAttribute("adto") AccountDTO adto,
 			HttpSession ss) {
@@ -225,5 +230,10 @@ public class AccountController {
 
 		return "index";
 	}
+	
+	
+	
+	
+	
 
 }

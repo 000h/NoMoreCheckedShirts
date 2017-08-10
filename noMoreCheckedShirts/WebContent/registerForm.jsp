@@ -25,6 +25,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
 	/* 회원가입폼 */
 	
 	
@@ -41,7 +48,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
+
+
+
+
+
+
+
 </script>
+
+
+
+
+
 <script src="js/jquery.min.js"></script>
 <!-- cart -->
 <script src="js/simpleCart.min.js">
@@ -68,6 +87,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
+<!-- 비밀번호 확인 -->
+
+<!-- <script type="text/javascript">
+function pass(){
+ var password = document.form.pw.value;
+ var password_ok = document.form.repw.value;
+ if (password_ok.length == 0 || password_ok == null) {
+  document.form.pass_ok.value = "비밀번호를 입력하세요";
+ } else if (password != password_ok) {
+  document.form.password_ok.value = null;
+  document.form.pass_ok.value = "비밀번호가 일치하지 않습니다.";
+ } else {   
+  document.form.pass_ok.value = "비밀번호가 동일합니다.";
+ }
+ return;
+}
+</script>
+
+ -->
+
+
+
+
+
 </head>
 <body>
 	<%-- header include --%>
@@ -83,7 +126,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="register-top-grid">
 							<h3>TERMS</h3>
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>terms<label>*</label></span> <input type="text">
+								<span>terms<label>*</label></span>
+								<!-- <input type="text"> -->
+								<textarea rows="10" cols="150"></textarea>
 							</div>
 							<!-- 170808 input type textarea로 바꿔야됨 -->
 
@@ -107,34 +152,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>ID<label>*</label></span> 
-								<input type="text" id="id" name = "id">
+								<span>ID<label>*</label></span> <input type="text" id="id"
+									name="id">
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Name<label>*</label></span> 
-								<input type="text" id="name" name = "name">
+								<span>Name<label>*</label></span> <input type="text" id="name"
+									name="name">
 							</div>
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>Password<label>*</label></span> 
-								<input type="password" id="pw" name = "pw">
+								<span>Password<label>*</label></span> <input type="password"
+									id="pw" name="pw">
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Confirm Password<label>*</label></span> 
-								<input type="password" id="repw" name = "repw">
-							</div>
-
-							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>HP<label>*</label></span> 
-								<input type="text" id="hp" name = "hp">
-							</div>
-							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>POST CODE<label>*</label></span> 
-								<input type="text" id = "postcode" name = "postcode">
+								<span>Confirm Password<label>*</label>
+								</span> <input type="password" id="repw" name="repw"  required onblur="pass()">
+			
 							</div>
 
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
-								<span>Address<label>*</label></span> 
-								<input type="text" id="addrs" name = "addrs">
+								<span>HP<label>*</label></span> <input type="text" id="hp"
+									name="hp">
+							</div>
+							<div class="wow fadeInRight" data-wow-delay="0.4s">
+								<span>POST CODE<label>*</label></span> <input type="text"
+									id="postcode" name="postcode">
+							</div>
+
+							<div class="wow fadeInRight" data-wow-delay="0.4s">
+								<span>Address<label>*</label></span> <input type="text"
+									id="addrs" name="addrs">
 							</div>
 
 							<div class="clearfix"></div>
@@ -154,28 +200,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</a>
 
 						</div> -->
-					
-					<div class="clearfix"></div>
-					<div class="register-but">
-					
+
+						<div class="clearfix"></div>
+						<div class="register-but">
+
 							<center>
 								<input type="submit" value="submit">
 								<!-- 		<div class="clearfix"></div> -->
 								<input type="reset" value="reset">
 							</center>
-						</form>
-					</div>
-					<!-- style.css 수정 : reset버튼-->
-
-
+					</form>
 				</div>
+				<!-- style.css 수정 : reset버튼-->
+
+
 			</div>
 		</div>
-		<!-- registration -->
+	</div>
+	<!-- registration -->
 
-		<div class="subscribe">
-			<div class="container">
-				<!-- <div class="subscribe1">
+	<div class="subscribe">
+		<div class="container">
+			<!-- <div class="subscribe1">
 					<h4>the latest from swim wear</h4>
 				</div>
 				<div class="subscribe2">
@@ -186,9 +232,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							type="submit" value="JOIN">
 					</form>
 				</div> -->
-				<div class="clearfix"></div>
-			</div>
+			<div class="clearfix"></div>
 		</div>
+	</div>
 	</div>
 
 	<%-- fotter include --%>
