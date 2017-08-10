@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!--footer-->
 <div class="footer-section">
 	<div class="container">
@@ -42,10 +43,11 @@
 			</div>
 			<div class="col-md-4 footer-grid1">
 				<div class="social-icons">
-					<a href="#"><i class="icon"></i></a> <a href="#"><i
-						class="icon1"></i></a> <a href="#"><i class="icon2"></i></a> <a
-						href="#"><i class="icon3"></i></a> <a href="#"><i
-						class="icon4"></i></a>
+					<a href="#"><i class="icon"></i></a>
+					<a href="#"><i class="icon1"></i></a>
+					<a href="#"><i class="icon2"></i></a>
+					<a href="#"><i class="icon3"></i></a>
+					<a href="#"><i class="icon4"></i></a>
 				</div>
 				<p>
 					Copyright &copy; 2015 Swim Wear. All rights reserved | Design by <a

@@ -1,22 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!--header-->
 <div class="header">
 	<div class="header-top">
 		<div class="container">
 			<div class="top-right">
 				<ul>
-					<li class="text"><a href="login.html">login</a></li>
-					<li><div class="cart box_1">
-							<a href="checkout.html"> <span class="simpleCart_total">
-									$0.00 </span> (<span id="simpleCart_quantity"
-								class="simpleCart_quantity"> 0 </span>)
-							</a>
-							<p>
-								<a href="javascript:;" class="simpleCart_empty">Empty cart</a>
-							</p>
-							<div class="clearfix"></div>
-						</div></li>
+					<c:choose>
+						<c:when test="${sessionScope.acode > 0}">
+							<li><div class="cart box_1">
+									<a href="checkout.html"> <span class="simpleCart_total">
+											$0.00 </span> (<span id="simpleCart_quantity"
+										class="simpleCart_quantity"> 0 </span>)
+									</a>
+									<p>
+										<a href="javascript:;" class="simpleCart_empty">Empty cart</a>
+									</p>
+									<div class="clearfix"></div>
+								</div>
+							</li>
+							<li class="text"><a href="logout.html">logout</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="text"><a href="login.html">login</a></li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 			</div>
 			<div class="clearfix"></div>
