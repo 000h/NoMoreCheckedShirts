@@ -6,6 +6,8 @@
 
 <mapper namespace="kr.co.nmcs.account">
 	<!-- 동희 작업분 -->
+	
+	<!-- 회원정보 관련 sql  -->
 	<update id="update" parameterType="adto">
 		UPDATE account
 		SET  name = #{name}, hp = #{hp}, addrs = #{addrs}, postcode = #{postcode}

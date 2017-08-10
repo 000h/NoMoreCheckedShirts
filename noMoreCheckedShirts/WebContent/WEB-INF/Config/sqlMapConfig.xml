@@ -6,8 +6,9 @@
   <!-- typeAlias table별로 추가 -->
   <configuration>
   	<typeAliases>
-  		<typeAlias type="kr.co.nmcs.test.TestDTO" alias="tdto"/>
+
   		<typeAlias type="kr.co.nmcs.dto.AccountDTO" alias="adto"/>
+  		<typeAlias type="kr.co.nmcs.dto.TransactionDTO" alias="tdto"/>
   	</typeAliases>
   	
   	
