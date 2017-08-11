@@ -804,6 +804,15 @@ p span.overline{
 	text-decoration:none;
 	color:#fff;
 }
+
+
+/*170811 추가*/
+.acount-btn:hover, .login-right input[type="button"]:hover{
+	background:#000;
+	text-decoration:none;
+	color:#fff;
+}
+
 .login-right form {
 	padding: 1em 0;
 }
@@ -835,6 +844,21 @@ p span.overline{
 }
 /*여기까지*/
 .login-right input[type="submit"] {
+	border: 2px solid #000;
+	color: #000;
+	font-size: 1em;
+	padding: 0.7em 1.2em;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	display: inline-block;
+	text-transform: uppercase;
+	outline:none;
+	background-color: #fff;
+}
+/*170811 추가*/
+.login-right input[type="button"] {
 	border: 2px solid #000;
 	color: #000;
 	font-size: 1em;
@@ -972,11 +996,30 @@ p span.overline{
 	outline: none;
 	background-color: #fff;
 }
+/*170811 추가*/
+.register-but form input[type="button"] {
+	border: 2px solid #000;
+	color: #000;
+	font-size: 1.2em;
+	padding: 0.6em 2em;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	display: inline-block;
+	text-transform: uppercase;
+	outline: none;
+	background-color: #fff;
+}
 .register-but input[type="submit"]:hover {
 	background:#000;
 	color: #fff;
 }
-
+/*170811 추가*/
+.register-but input[type="button"]:hover {
+	background:#000;
+	color: #fff;
+}
 /* 170808 추가 */
 .register-but form input[type="reset"] {
 	border: 2px solid #000;
@@ -1949,6 +1992,19 @@ address {
 	font-weight: 500;
 	padding: 10px 0;
 }
+/*170811 추가*/
+.contact-right input[type="submit"] {
+	width: 20%;
+	font-size: 1em;
+	text-transform: uppercase;
+	background: #000;
+	border: none;
+	outline: none;
+	margin-top: 0.5em;
+	color: #fff;
+	font-weight: 500;
+	padding: 10px 0;
+}
 .contact-right input[type="submit"]:hover {
 	background: #eee;
     color: #000;
@@ -2564,6 +2620,10 @@ a.button {
     font-size: 1.25em;
 }
 .register-but form input[type="submit"] {
+       font-size: 0.9em;
+}
+/*170811 추가*/
+.register-but form input[type="button"] {
        font-size: 0.9em;
 }
 .cart-items h1 {

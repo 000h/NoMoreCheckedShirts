@@ -32,6 +32,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
+	
+	
 	/* 회원가입폼 */
 	
 	
@@ -39,6 +42,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
+
 
 
 
@@ -89,25 +95,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- 비밀번호 확인 -->
 
-<!-- <script type="text/javascript">
-function pass(){
- var password = document.form.pw.value;
- var password_ok = document.form.repw.value;
- if (password_ok.length == 0 || password_ok == null) {
-  document.form.pass_ok.value = "비밀번호를 입력하세요";
- } else if (password != password_ok) {
-  document.form.password_ok.value = null;
-  document.form.pass_ok.value = "비밀번호가 일치하지 않습니다.";
- } else {   
-  document.form.pass_ok.value = "비밀번호가 동일합니다.";
- }
- return;
-}
+<script type="text/javascript">
+	function pass() {
+		var password = document.register.pw.value;
+		var password_ok = document.register.repw.value;
+		/*  if (password.length == 0 || password_ok == null) {
+		 alert( "비밀번호를 입력하세요" );
+		 document.register.pw.focus();
+		 } else */if (password != password_ok) {
+			alert("비밀번호가 일치하지 않습니다");
+			/*         document.loginform.pw.focus(); */
+		} else if (password == password_ok) {
+			console.log("일단 눌림");
+			document.register.setAttribute("action", "registerOk");
+			document.register.submit();
+
+		}
+		/* return; */
+	}   //pass() end
+	
+	function idCk(){
+		console.log("일단눌림");
+		var id = document.getElementById("id").value;
+		document.setAttribute("id", id);
+		location.href = "idCk";
+		console.log(${msg});
+		
+		
+	}
+	
+
+	
+	
+	
+	
+	
+	
 </script>
-
- -->
-
-
 
 
 
@@ -121,14 +145,14 @@ function pass(){
 		<div class="main-1">
 			<div class="container">
 				<div class="register">
-					<form action="register">
+					<form action="register" name="register">
 
 						<div class="register-top-grid">
 							<h3>TERMS</h3>
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>terms<label>*</label></span>
+								<!-- <span>terms<label>*</label></span> -->
 								<!-- <input type="text"> -->
-								<textarea rows="10" cols="150"></textarea>
+								<textarea rows="10" cols="150"><%@include file="termsR.jsp"%></textarea>
 							</div>
 							<!-- 170808 input type textarea로 바꿔야됨 -->
 
@@ -152,8 +176,9 @@ function pass(){
 
 
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>ID<label>*</label></span> <input type="text" id="id"
-									name="id">
+								<span>ID<label>*</label></span> 
+								<input type="text" id="id"
+									name="id"> <input type="button" value="ID 중복확인" onclick ="idCk()"/>
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
 								<span>Name<label>*</label></span> <input type="text" id="name"
@@ -165,8 +190,12 @@ function pass(){
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
 								<span>Confirm Password<label>*</label>
-								</span> <input type="password" id="repw" name="repw"  required onblur="pass()">
-			
+								</span> <input type="password" id="repw" name="repw">
+								<!-- onkeyup="checkUserPassword(this, 'equalsPasswordView');" /> <span
+									id="equalsPasswordView"></span> -->
+
+
+
 							</div>
 
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
@@ -205,7 +234,7 @@ function pass(){
 						<div class="register-but">
 
 							<center>
-								<input type="submit" value="submit">
+								<input type="button" value="submit" onclick="pass()">
 								<!-- 		<div class="clearfix"></div> -->
 								<input type="reset" value="reset">
 							</center>

@@ -53,6 +53,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 </script>
 
+ <script type="text/javascript">
+ 
+ function CheckLoginInput()
+ {
+/* 	 console.log("아무글자나 나와라 "); */
+	 
+     if( document.loginform.id.value == "" )
+     {
+         alert( "ID를 입력하세요" );
+         document.loginform.id.focus();
+         return false;
+     }
+  
+     if( document.loginform.pw.value == "" )
+     {
+         alert( "비밀번호를 입력하세요" );
+         document.loginform.pw.focus();
+         return false;
+     }
+  
+     document.loginform.setAttribute( "action", "loginOk" );
+     document.loginform.submit();
+  
+ }
+ 
+ 
+ </script>
+
+
+
 
 
 </head>
@@ -78,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="col-md-6 login-right">
 							<h3>REGISTERED CUSTOMERS</h3>
 							<p>If you have an account with us, please log in.</p>
-							<form action="loginOk">   <!-- 값 넘어가는것 확인 후에 POST로 바꿀 것! -->
+							<form name = "loginform" action="loginOk">   <!-- 값 넘어가는것 확인 후에 POST로 바꿀 것! -->
 								<div>
 									<span>ID<label>*</label></span> 
 									<input type="text" name="id" id="id">
@@ -88,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<input type="password" name="pw" id="pw">
 								</div>
 								<!-- <a class="forgot" href="#">Forgot Your Password?</a> -->
-								<input type="submit" value="Login">
+								<input type="button" value="Login" onclick="CheckLoginInput()">
 							</form>
 						</div>
 						<div class="clearfix"></div>

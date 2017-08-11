@@ -20,7 +20,7 @@
 									<div class="clearfix"></div>
 								</div>
 							</li>
-							<li class="text"><a href="logout.html">logout</a></li>
+							<li class="text"><a href="logoutOk">logout</a></li>
 						</c:when>
 						<c:otherwise>
 							<li class="text"><a href="login.html">login</a></li>
