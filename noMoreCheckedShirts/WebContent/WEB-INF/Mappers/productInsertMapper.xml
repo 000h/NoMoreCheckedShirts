@@ -14,4 +14,9 @@
   		FROM producttype	
   	</select>
   	
+  	<select id="selectProductList" resultType="pidto">
+  		SELECT pcode, name
+  		FROM product
+  	</select>
+  	 	
   </mapper>

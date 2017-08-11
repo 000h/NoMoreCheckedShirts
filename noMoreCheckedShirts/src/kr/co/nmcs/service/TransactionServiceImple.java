@@ -39,7 +39,7 @@ public class TransactionServiceImple implements TransactionService {
 	}
 
 	@Override
-	public TransactionDTO readInfo(int tcode) {
+	public List<TransactionDTO> readInfo(int tcode) {
 		
 		return daoT.selectInfo(tcode);
 	}

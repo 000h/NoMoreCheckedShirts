@@ -9,5 +9,5 @@ public interface TransactionDao {
 	public List<TransactionDTO> selectAll();
 	public TransactionDTO selectRev(int tcode);
 	public TransactionDTO selectAccount(String id);
-	public TransactionDTO selectInfo(int tcode);
+	public List<TransactionDTO> selectInfo(int tcode);
 }

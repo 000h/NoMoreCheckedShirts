@@ -23,13 +23,11 @@
 	</select>
 
 	<select id="selectInfo" resultType="tdto" parameterType="int">
-		select name, price, info
-		from productinfo
-		where scode = (select scode
-		from orderlist
-		where ocode = (select ocode
-		from transaction
-		where tcode = #{tcode}))
+	SELECT name, price, info	
+	FROM productinfo	
+	WHERE scode in (SELECT scode
+		FROM orderlist
+		WHERE tcode=#{tcode})
 
 	</select>
 </mapper>

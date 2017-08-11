@@ -30,6 +30,7 @@
 				data-toggle="dropdown" href="#">상품관리 <span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="NPinsertMain">제품등록</a></li>
+					<li><a href="NPinsertSetMain">세트등록</a></li>
 				</ul></li>
 		</ul>
 		<div id="main">

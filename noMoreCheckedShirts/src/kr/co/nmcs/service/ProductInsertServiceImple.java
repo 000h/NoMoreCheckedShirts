@@ -25,12 +25,16 @@ public class ProductInsertServiceImple implements ProductInsertService {
 
 	}
 
-
-
 	@Override
 	public List<ProductInsertDTO> selectType() {
 		
 		return daoI.selectType();
+	}
+
+	@Override
+	public List<ProductInsertDTO> selectProductList() {
+		
+		return daoI.selectProductList();
 	}
 
 }

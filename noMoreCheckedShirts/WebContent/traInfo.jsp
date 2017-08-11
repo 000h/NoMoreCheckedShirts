@@ -31,6 +31,7 @@
 				data-toggle="dropdown" href="#">상품관리 <span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="NPinsertMain">제품등록</a></li>
+					<li><a href="NPinsertSetMain">세트등록</a></li>
 				</ul></li>
 		</ul>
 
@@ -44,11 +45,13 @@
 					<th>가격</th>
 					<th>상세정보</th>
 				</tr>
+					<c:forEach var="r" items="${readInfo }">
 				<tr>
-					<td>${readInfo.name }</td>
-					<td>${readInfo.price }</td>
-					<td>${readInfo.info }</td>
+						<td>${r.name }</td>
+						<td>${r.price }</td>
+						<td>${r.info }</td>
 				</tr>
+					</c:forEach>
 				<tr>
 					<td colspan="4">
 						<a href="NTreadAll"><input type="button" value="뒤로가기" /></a>

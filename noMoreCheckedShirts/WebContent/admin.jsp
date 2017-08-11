@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>admin.jsp</title>
+<title>productInsert.jsp</title>
 <jsp:include page="commom/StyleScript.jsp" />
 
 </head>
@@ -30,16 +31,15 @@
 				data-toggle="dropdown" href="#">상품관리 <span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="NPinsertMain">제품등록</a></li>
+					<li><a href="NPinsertSetMain">세트등록</a></li>
 				</ul></li>
 		</ul>
 
 		<div class="main">
 			<br>
-			<h2>관리자 페이지입니다</h2>
-			<br>
-			<h3>${msg }</h3>
+			<h2>관리자 페이지 입니다</h2>
+			<h1>${msg }</h1>
 		</div>
-	</div>
 
 	<jsp:include page="commom/footer.jsp" />
 

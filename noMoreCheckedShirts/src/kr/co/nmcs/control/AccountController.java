@@ -185,7 +185,7 @@ public class AccountController {
 			System.out.println("session get Id : " + ss.getId());
 			System.out.println("session attribute names : " + ss.getAttributeNames().toString());
 
-			return new ModelAndView("index", "dto", dto);
+			return new ModelAndView("redirect:/index");
 		}
 
 		//
@@ -209,8 +209,13 @@ public class AccountController {
 	}
 
 	
+	@RequestMapping("/index")
+	public String index() {
+		return "index";
+	}
+	
 	/* 로그아웃 */
-	@RequestMapping("/logoutTestOk")
+	@RequestMapping("/logoutOk")
 	public String logout(HttpServletRequest req, HttpServletResponse resp, @ModelAttribute("adto") AccountDTO adto,
 			HttpSession ss) {
 
@@ -237,6 +242,25 @@ public class AccountController {
 		return "index";
 	}
 	
+	
+	
+	/* ID 체크 */
+	@RequestMapping("/idCk")
+	public ModelAndView idCk(HttpServletRequest req, HttpServletResponse resp,
+			@ModelAttribute("adto") AccountDTO adto, HttpSession ss) {
+		ModelAndView mav = new ModelAndView();
+		String id = req.getParameter("id");
+		String dbid = (String)ss.getAttribute(adto.getId());
+		
+		if(id==dbid) {
+			mav.addObject("msg","사용 불가능한 아이디 입니다");
+		}else {
+			mav.addObject("msg","사용가능한 아이디 입니다");
+		}
+
+		mav.setViewName("registerForm");
+		return mav;
+	}
 	
 	
 	

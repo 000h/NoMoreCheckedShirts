@@ -4,6 +4,15 @@ public class ProductInsertDTO {
 
 	private String name;
 	private String type;
+	private int pcode;
+
+	public int getPcode() {
+		return pcode;
+	}
+
+	public void setPcode(int pcode) {
+		this.pcode = pcode;
+	}
 
 	public String getName() {
 		return name;

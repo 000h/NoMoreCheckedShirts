@@ -33,5 +33,9 @@ public class ProductInsertController {
 		return new ModelAndView("productInsert", "type", pis.selectType());
 	}
 	
-	
+	@RequestMapping("NPinsertSetMain")
+	public ModelAndView showList() {
+		
+		return new ModelAndView("productSetInsert", "list", pis.selectProductList());
+	}
 }

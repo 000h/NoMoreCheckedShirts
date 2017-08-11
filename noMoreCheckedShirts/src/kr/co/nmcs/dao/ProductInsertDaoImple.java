@@ -31,4 +31,10 @@ public class ProductInsertDaoImple implements ProductInsertDao {
 		return ss.selectList("kr.co.nmcs.productInsert.selectType");
 	}
 
+	@Override
+	public List<ProductInsertDTO> selectProductList() {
+		
+		return ss.selectList("kr.co.nmcs.productInsert.selectProductList");
+	}
+
 }

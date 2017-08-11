@@ -37,9 +37,9 @@ public class TransactionDaoImple implements TransactionDao {
 	}
 
 	@Override
-	public TransactionDTO selectInfo(int tcode) {
+	public List<TransactionDTO> selectInfo(int tcode) {
 		
-		return ss.selectOne("kr.co.nmcs.transaction.selectInfo", tcode);
+		return ss.selectList("kr.co.nmcs.transaction.selectInfo", tcode);
 	}
 
 }

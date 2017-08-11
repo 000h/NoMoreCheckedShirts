@@ -11,6 +11,7 @@
   		<typeAlias type="kr.co.nmcs.dto.TransactionDTO" alias="tdto"/>
   		<typeAlias type="kr.co.nmcs.dto.AccountIdPw" alias="idpw"/>
   		<typeAlias type="kr.co.nmcs.dto.ProductInsertDTO" alias="pidto"/>
+  		<typeAlias type="kr.co.nmcs.dto.ProductSetInsertDTO" alias="pisdto"/>
   	</typeAliases>
   	
   	

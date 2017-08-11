@@ -8,4 +8,5 @@ public interface ProductInsertService {
 	public void insertProduct(ProductInsertDTO dto);
 
 	public List<ProductInsertDTO> selectType();
+	public List<ProductInsertDTO> selectProductList();
 }

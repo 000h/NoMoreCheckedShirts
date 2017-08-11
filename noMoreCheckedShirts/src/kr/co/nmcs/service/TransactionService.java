@@ -9,6 +9,6 @@ public interface TransactionService {
 	public List<TransactionDTO> readAll();
 	public TransactionDTO readRev(int tcode);
 	public TransactionDTO readAccount(String id);
-	public TransactionDTO readInfo(int tcode);
+	public List<TransactionDTO> readInfo(int tcode);
 	
 }
