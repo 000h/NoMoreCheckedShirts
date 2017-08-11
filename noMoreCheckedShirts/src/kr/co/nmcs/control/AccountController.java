@@ -210,7 +210,7 @@ public class AccountController {
 
 	
 	/* 로그아웃 */
-	@RequestMapping("/logoutTestOk")
+	@RequestMapping("/logoutOk")
 	public String logout(HttpServletRequest req, HttpServletResponse resp, @ModelAttribute("adto") AccountDTO adto,
 			HttpSession ss) {
 
