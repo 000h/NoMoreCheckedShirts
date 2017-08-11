@@ -34,6 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	
+	
 	/* 회원가입폼 */
 	
 	
@@ -41,6 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 
@@ -94,67 +96,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- 비밀번호 확인 -->
 
 <script type="text/javascript">
-function pass(){
- var password = document.form.pw.value;
- var password_ok = document.form.repw.value;
- if (password_ok.length == 0 || password_ok == null) {
-	    alert( "비밀번호를 입력하세요" );
-        document.loginform.pw.focus();
- } else if (password != password_ok) {
-	    alert( "비밀번호가 일치하지 않습니다" );
-        document.loginform.pw.focus();
- } else {   
-	 document.loginform.setAttribute( "action", "registerOk" );
- }
- return;
-}
+	function pass() {
+		var password = document.register.pw.value;
+		var password_ok = document.register.repw.value;
+		/*  if (password.length == 0 || password_ok == null) {
+		 alert( "비밀번호를 입력하세요" );
+		 document.register.pw.focus();
+		 } else */if (password != password_ok) {
+			alert("비밀번호가 일치하지 않습니다");
+			/*         document.loginform.pw.focus(); */
+		} else if (password == password_ok) {
+			console.log("일단 눌림");
+			document.register.setAttribute("action", "registerOk");
+			document.register.submit();
+
+		}
+		/* return; */
+	}   //pass() end
+	
+	function idCk(){
+		console.log("일단눌림");
+		document.setAttribute("id", "idCk");
+		console.log(${msg});
+		
+		
+	}
+	
+
+	
+	
+	
+	
+	
+	
 </script>
 
 
-<!-- 
-<script type="text/javascript">
-	function checkUserPassword(obj, viewPassword) {
-		var doc = document;
-		var password = doc.register.pw;
-		var passwordCheck = doc.register.repw;
-		var msg = checkEqualsPassword(obj);
-
-		if (pw.value.length == 0) {
-			alert("비밀번호를 먼저 입력해주세요. ");
-			passwordCheck.value = "";
-		}
-
-		if (msg == "") {
-			msg = "비밀번호가 일치합니다.";
-			doc.register.password_check.value = "Y";
-			if (pw.value.length == 0 && passwordCheck.value.length == 0) {
-				msg = "&nbsp;";
-			}
-		}
-		doc.getElementById(viewPassword).innerHTML = msg; //    id="viewPassword" 인 부분을 찾아 msg 를 넣어준다 . 
-	}
-
-	function checkEqualsPassword(passCheckValue) {
-		var doc = document;
-		var msg = "";
-		var password = doc.register.pw;
-		var passwordCheck = passCheckValue;
-
-		if (passwordCheck.value != "") {
-			if (passwordCheck.value != pw.value) {
-				msg = "비밀번호가 일치하지 않습니다.";
-				doc.pw.password_check.value = "F";
-				/*  if(password.value.length == 0){
-				  msg = "비밀번호를 입력하세요.";
-				 } */
-			}
-		} else {
-			msg = "비밀번호를 한번 더 입력해주세요.";
-		}
-		return msg;
-	}
-</script>
- -->
 
 </head>
 <body>
@@ -171,9 +148,9 @@ function pass(){
 						<div class="register-top-grid">
 							<h3>TERMS</h3>
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>terms<label>*</label></span>
+								<!-- <span>terms<label>*</label></span> -->
 								<!-- <input type="text"> -->
-								<textarea rows="10" cols="150"></textarea>
+								<textarea rows="10" cols="150"><%@include file="termsR.jsp"%></textarea>
 							</div>
 							<!-- 170808 input type textarea로 바꿔야됨 -->
 
@@ -197,8 +174,9 @@ function pass(){
 
 
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>ID<label>*</label></span> <input type="text" id="id"
-									name="id"> <input type="button" value="ID 중복확인" />
+								<span>ID<label>*</label></span> 
+								<input type="text" id="id"
+									name="id"> <input type="button" value="ID 중복확인" onclick ="idCk()"/>
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
 								<span>Name<label>*</label></span> <input type="text" id="name"
@@ -210,8 +188,8 @@ function pass(){
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
 								<span>Confirm Password<label>*</label>
-								</span> <input type="password" id="repw" name="repw" onclick = "pass()">
-									<!-- onkeyup="checkUserPassword(this, 'equalsPasswordView');" /> <span
+								</span> <input type="password" id="repw" name="repw">
+								<!-- onkeyup="checkUserPassword(this, 'equalsPasswordView');" /> <span
 									id="equalsPasswordView"></span> -->
 
 
@@ -254,7 +232,7 @@ function pass(){
 						<div class="register-but">
 
 							<center>
-								<input type="submit" value="submit">
+								<input type="button" value="submit" onclick="pass()">
 								<!-- 		<div class="clearfix"></div> -->
 								<input type="reset" value="reset">
 							</center>

@@ -85,7 +85,8 @@
 
 
 	<select id="IdCk" parameterType="adto" resultType="adto">
-		SELECT NVL(COUNT(*),0)
+		<!-- SELECT NVL(COUNT(*),0) -->
+		SELECT id
 		FROM account
 		WHERE id=#{id}
 	</select>
