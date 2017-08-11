@@ -21,6 +21,11 @@
 				animation : "slide",
 				controlNav : "thumbnails"
 			});
+			
+			$("#checkoutLink").on("click", function(){
+				$("#infoForm").attr("action", "checkout");
+				$("#infoForm").submit();
+			});
 		});
 	</script>
 </head>
@@ -56,58 +61,31 @@
 								<li data-thumb="${info.img}">
 									<div class="thumb-image"> <img src="${info.img}" data-imagezoom="true" class="img-responsive"> </div>
 								</li>
-								<li data-thumb="${info.img}">
-									<div class="thumb-image"> <img src="${info.img}" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
-								<li data-thumb="${info.img}">
-									<div class="thumb-image"> <img src="${info.img}" data-imagezoom="true" class="img-responsive"> </div>
-								</li> 
 							</ul>
 						</div>
-					</div>	
-					<div class="col-md-4 single-grid simpleCart_shelfItem">		
-						<h3>${info.name}</h3>
-						<p>Condition  New With the boom of the swimwear market, there are so many places providing swimming costumes that you may not know where to look first. If you want to facilitate your search, drop in at our one-stop store, and you’ll be able to equip yourself properly for water activities.</p>
-						<ul class="size">
-							<h3>Size</h3>
-							<li><a href="#">25</a></li>
-							<li><a href="#">26</a></li>
-							<li><a href="#">27</a></li>
-							<li><a href="#">28</a></li>
-							<li><a href="#">29</a></li>
-							<li><a href="#">30</a></li>
-							<li><a href="#">31</a></li>
-							<li><a href="#">32</a></li>
-							<li><a href="#">33</a></li>
-						</ul>
-						<ul class="size">
-							<h3>Length</h3>
-							<li><a href="#">32</a></li>
-							<li><a href="#">34</a></li>
-						</ul>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">${info.price}</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span>
-								<span>☆</span>
-								<span>☆</span>
-								<span>☆</span>
-								<span>☆</span>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<p class="qty"> Qty :  </p><input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
-						<div class="btn_form">
-							<a href="#" class="add-cart item_add">카트에 추가</a>
-							<a href="#" class="add-cart item_add">바로 구매</a>	
-						</div>
-						<div class="tag">
-							<p>Category : <a href="#"> Lorem </a></p>
-							<p>Tag : <a href="#"> Lorem ipsum </a></p>
-						</div>
 					</div>
+					<form id="infoForm" method="post">
+						<input type="hidden" name="item" value="${info.scode}"/>
+						<input type="hidden" name="price" value="${info.price}"/>
+						<div class="col-md-4 single-grid simpleCart_shelfItem">		
+							<h3>${info.name}</h3>
+							<div class="galry">
+								<div class="prices">
+									<h5 class="item_price">${info.price}</h5>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<p class="qty"> Qty :  </p><input min="1" type="number" id="quantity" name="ea" value="1" class="form-control input-small">
+							<div class="btn_form">
+								<a href="#" id="checkoutLink" class="add-cart item_add">카트에 추가</a>
+								<a href="#" class="add-cart item_add">바로 구매</a>	
+							</div>
+							<div class="tag">
+								<p>Category : <a href="#"> Lorem </a></p>
+								<p>Tag : <a href="#"> Lorem ipsum </a></p>
+							</div>
+						</div>
+					</form>
 					<div class="clearfix"> </div>
 				</div>
 			</div>

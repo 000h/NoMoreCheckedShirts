@@ -7,14 +7,34 @@
 <mapper namespace="kr.co.nmcs.sell">
 	<!-- 장바구니 조회 -->
 	<select id="selectCheckout" parameterType="int" resultType="kr.co.nmcs.dto.CheckoutDTO">
-		SELECT t.tcode, t.ocode, op.scode, op.name, op.img, op.ea, op.price, t.tradate
-		FROM transaction t, (SELECT o.ocode, o.scode, p.name, p.img, o.ea, o.price
-		                       FROM orderlist o, productinfo p
-		                      WHERE o.scode = p.scode) op
-		WHERE t.ocode = op.ocode
-		  AND t.trastatus = 0
-		  AND t.acode = #{acode}
+		SELECT t.tcode, op.ocode, op.scode, op.name, op.img, op.ea, op.price, t.tradate
+		  FROM transaction t, (SELECT o.ocode, o.tcode, o.scode, p.name, p.img, o.ea, o.price
+								 FROM orderlist o, productinfo p
+								WHERE o.scode = p.scode) op
+		 WHERE t.tcode = op.tcode
+		   AND t.trastatus = 0
+		   AND t.acode = #{acode}
 	</select>
+	
+	<!-- 장바구니 상태(미결제)인 주문 코드 조회 -->
+	<select id="selectCheckoutTcode" parameterType="int" resultType="int">
+		SELECT tcode
+		  FROM transaction
+		 WHERE trastatus = 0
+		   AND acode = #{acode}
+	</select>
+	
+	<!-- 주문 테이블에 장바구니상태인 주문 추가 -->
+	<insert id="insertCheckoutTran" parameterType="int">
+		INSERT INTO transaction(tcode, acode, tradate, trastatus)
+		VALUES (TRANSACTION_SEQ, #{acode}, sysdate, 0)
+	</insert>
+	
+	<!-- 장바구니에 품목 추가 -->
+	<insert id="addCheckout" parameterType="kr.co.nmcs.dto.OrderDTO">
+		INSERT INTO orderlist(ocode, tcode, scode, ea, price)
+		VALUES (ORDER_SEQ.NEXTVAL, #{tcode}, #{scode}, #{ea}, #{price})
+	</insert>
 	
 	<!-- 주문품목 제거(장바구니 품목 빼기) -->
 	<delete id="deleteOrder" parameterType="int">

@@ -13,6 +13,3 @@
 	</script>
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-	<!-- cart -->
-	<script src="js/simpleCart.min.js"></script>
-	<!-- cart -->

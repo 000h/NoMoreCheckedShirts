@@ -2,6 +2,7 @@ package kr.co.nmcs.dto;
 
 public class OrderDTO {
 	private int ocode;
+	private int tcode;
 	private int scode;
 	private int ea;
 	private int price;
@@ -13,13 +14,21 @@ public class OrderDTO {
 	public int getOcode() {
 		return ocode;
 	}
-
+	
 	public void setOcode(int ocode) {
 		this.ocode = ocode;
 	}
 
 	public int getScode() {
 		return scode;
+	}
+
+	public int getTcode() {
+		return tcode;
+	}
+
+	public void setTcode(int tcode) {
+		this.tcode = tcode;
 	}
 
 	public void setScode(int scode) {
