@@ -116,7 +116,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	function idCk(){
 		console.log("일단눌림");
-		document.setAttribute("id", "idCk");
+		var id = document.getElementById("id").value;
+		document.setAttribute("id", id);
+		location.href = "idCk";
 		console.log(${msg});
 		
 		
