@@ -185,7 +185,7 @@ public class AccountController {
 			System.out.println("session get Id : " + ss.getId());
 			System.out.println("session attribute names : " + ss.getAttributeNames().toString());
 
-			return new ModelAndView("index", "dto", dto);
+			return new ModelAndView("redirect:/index");
 		}
 
 		//
@@ -208,6 +208,11 @@ public class AccountController {
 
 	}
 
+	
+	@RequestMapping("/index")
+	public String index() {
+		return "index";
+	}
 	
 	/* 로그아웃 */
 	@RequestMapping("/logoutOk")
