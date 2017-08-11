@@ -41,4 +41,12 @@ public interface SellService {
 	 * @return 추가된 행 개수
 	 * */
 	public int createCheckoutItem(OrderDTO odto);
+
+	/**
+	 * 주문 상품을 제거한다.
+	 * 
+	 * @param ocode : 삭제할 주문 번호
+	 * @return 삭제된 행 개수
+	 * */
+	public int deleteOrderItem(int ocode);
 }

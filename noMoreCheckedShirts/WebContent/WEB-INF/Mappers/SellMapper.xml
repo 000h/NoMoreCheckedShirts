@@ -7,7 +7,7 @@
 <mapper namespace="kr.co.nmcs.sell">
 	<!-- 장바구니 조회 -->
 	<select id="selectCheckout" parameterType="int" resultType="kr.co.nmcs.dto.CheckoutDTO">
-		SELECT t.tcode, op.ocode, op.scode, op.name, op.img, op.ea, op.price, t.tradate
+		SELECT t.tcode, op.ocode, op.scode, op.name, op.img, op.ea, op.price*op.ea as price, t.tradate
 		  FROM transaction t, (SELECT o.ocode, o.tcode, o.scode, p.name, p.img, o.ea, o.price
 								 FROM orderlist o, productinfo p
 								WHERE o.scode = p.scode) op

@@ -59,6 +59,17 @@ public class SellServiceImple implements SellService {
 	public int createCheckoutItem(OrderDTO odto) {
 		return dao.insertCheckoutItem(odto);
 	} // createCheckoutItem method end
+	
+	/**
+	 * 주문 상품을 제거한다.
+	 * 
+	 * @param ocode : 삭제할 주문 번호
+	 * @return 삭제된 행 개수
+	 * */
+	@Override
+	public int deleteOrderItem(int ocode) {
+		return dao.deleteOrderItem(ocode);
+	}
 	// ---------- Override Methods end ----------
 
 	// DI Setter

@@ -9,14 +9,12 @@
 				<ul>
 					<c:choose>
 						<c:when test="${sessionScope.acode > 0}">
-							<li><div class="cart box_1">
-									<a href="checkout.html"> <span class="simpleCart_total">
-											$0.00 </span> (<span id="simpleCart_quantity"
-										class="simpleCart_quantity"> 0 </span>)
+							<li>
+								<div class="cart box_1">
+									<a href="checkout.html">
+										<span class="simpleCart_total">장바구니</span>
+										<span id="simpleCart_quantity" class="simpleCart_quantity"> </span>
 									</a>
-									<p>
-										<a href="javascript:;" class="simpleCart_empty">Empty cart</a>
-									</p>
 									<div class="clearfix"></div>
 								</div>
 							</li>
