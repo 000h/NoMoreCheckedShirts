@@ -65,14 +65,22 @@ public class SellDaoImple implements SellDao {
 	public int insertCheckoutItem(OrderDTO odto) {
 		return ss.insert("addCheckout", odto);
 	} // insertCheckoutItem method end
+	
+	/**
+	 * 주문 품목을 제거한다.
+	 * 
+	 * @param ocode : 삭제할 주문 번호
+	 * @return 삭제된 행 개수
+	 * */
+	@Override
+	public int deleteOrderItem(int ocode) {
+		return ss.delete("deleteOrder", ocode);
+	} // deleteOrderItem method end
 	// ---------- Override Methods end----------
 
 	// DI Setter
 	public void setSs(SqlSession ss) {
 		this.ss = ss;
 	}
-
-
-
 
 }

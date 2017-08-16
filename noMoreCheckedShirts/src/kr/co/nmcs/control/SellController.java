@@ -1,5 +1,7 @@
 package kr.co.nmcs.control;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import kr.co.nmcs.dto.CheckoutDTO;
 import kr.co.nmcs.dto.OrderDTO;
 import kr.co.nmcs.service.SellService;
 
@@ -28,7 +31,17 @@ public class SellController {
 		// 세션값으로 로그인 여부를 판별하고 보여줄 VIEW를 결정한다.
 		if (session.getAttribute("acode") != null) { // 로그인 상태일경우
 			int acode = (int) session.getAttribute("acode"); // 세션에서 회원 코드 취득
-			mav.addObject("checkoutList", ss.readCheckoutList(acode)); // 회원코드로 장바구니 상품목록을 가져와 모델뷰에 저장
+			List<CheckoutDTO> list = ss.readCheckoutList(acode); // 장바구니 품목을 가져온다.
+			
+			// 장바구니 품목들 총합 가격 계산
+			int total = 0;
+			
+			for (CheckoutDTO dto : list) {
+				total+=dto.getPrice();
+			} // for end
+			
+			mav.addObject("checkoutList", list); // 회원코드로 장바구니 상품목록을 가져와 모델뷰에 저장
+			mav.addObject("total", total); // 장바구니 품목 가격 총합을  모델뷰에 저장
 			mav.setViewName("sellCheckout"); // 장바구니 페이지로
 		} else { // 로그인을 하지 않았을 경우
 			mav = nonLogin(); // 로그인 페이지로
@@ -77,8 +90,74 @@ public class SellController {
 	} // addCheckout method end
 	
 	// 장바구니 상품 제거
+	@RequestMapping(value="removeCheckout", params="taget")
+	public ModelAndView removeOrderItem(HttpSession session, @RequestParam("taget") int ocode) {
+		ModelAndView mav = new ModelAndView(); // 전달용 모델뷰 객체 생성
+		
+		// 세션값으로 로그인 여부를 판별하고 보여줄 VIEW를 결정한다.
+		if (session.getAttribute("acode") != null) { // 로그인 상태일경우
+			ss.deleteOrderItem(ocode); // 해당 주문번호의 물품 삭제
+
+			// 장바구니 화면으로 전환.
+			mav.setViewName("redirect:checkout.html"); // 장바구니 페이지로
+		} else { // 로그인을 하지 않았을 경우
+			mav = nonLogin(); // 로그인 페이지로
+		} // end if
+		
+		return mav; // 모델뷰 객체 반환
+	} // checkout method end
 	
 	// 장바구니 상품 개수 추가
+	
+	// 결제 페이지
+	@RequestMapping("order.html")
+	public ModelAndView orderPage(HttpSession session) {
+		ModelAndView mav = new ModelAndView(); // 전달용 모델뷰 객체 생성
+		
+		// 세션값으로 로그인 여부를 판별하고 보여줄 VIEW를 결정한다.
+		if (session.getAttribute("acode") != null) { // 로그인 상태일경우
+			int acode = (int) session.getAttribute("acode"); // 세션에서 회원 코드 취득
+			List<CheckoutDTO> list = ss.readCheckoutList(acode); // 장바구니 품목을 가져온다.
+			
+			// 장바구니 품목들 총합 가격 계산
+			int total = 0;
+			
+			for (CheckoutDTO dto : list) {
+				total+=dto.getPrice();
+			} // for end
+			
+			mav.addObject("checkoutList", list); // 회원코드로 장바구니 상품목록을 가져와 모델뷰에 저장
+			mav.addObject("total", total); // 장바구니 품목 가격 총합을  모델뷰에 저장
+			mav.setViewName("orderPayment"); // 결제 페이지로
+		} else { // 로그인을 하지 않았을 경우
+			mav = nonLogin(); // 로그인 페이지로
+		} // end if
+		
+		return mav; //  모델뷰 객체 반환
+	} // orderPage method end
+	
+	@RequestMapping("transaction.html")
+	public ModelAndView transaction(
+				 HttpSession session
+				,@RequestParam("tcode") String tcode
+				,@RequestParam("traname") String traname
+				,@RequestParam("rehp") String rehp
+				,@RequestParam("postcode") String postcode
+				,@RequestParam("addr") String addr
+			) {
+		ModelAndView mav;
+		
+		// 세션값으로 로그인 여부를 판별하고 보여줄 VIEW를 결정한다.
+		if (session.getAttribute("acode") != null) { // 로그인 상태일경우
+			int acode = (int) session.getAttribute("acode"); // 세션에서 회원 코드 취득
+			
+			mav = new ModelAndView();
+			mav.setViewName("productTrans"); // 결제 페이지로
+		} else { // 로그인을 하지 않았을 경우
+			mav = nonLogin(); // 로그인 페이지로
+		} // end if
+		return mav;
+	}
 	
 	// 로그인 하지 않았을때 모델뷰 설정
 	private ModelAndView nonLogin() {

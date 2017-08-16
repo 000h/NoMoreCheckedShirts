@@ -37,4 +37,12 @@ public interface SellDao {
 	 * @return 추가된 행 개수
 	 * */
 	public int insertCheckoutItem(OrderDTO odto);
+	
+	/**
+	 * 주문 품목을 제거한다.
+	 * 
+	 * @param ocode : 삭제할 주문 번호
+	 * @return 삭제된 행 개수
+	 * */
+	public int deleteOrderItem(int ocode);
 }
