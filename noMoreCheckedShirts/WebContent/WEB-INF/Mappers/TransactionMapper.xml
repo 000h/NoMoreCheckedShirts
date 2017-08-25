@@ -24,6 +24,7 @@
 
 	<select id="selectInfo" resultType="tdto" parameterType="int">
 	SELECT name, price, info	
+	
 	FROM productinfo	
 	WHERE scode in (SELECT scode
 		FROM orderlist
