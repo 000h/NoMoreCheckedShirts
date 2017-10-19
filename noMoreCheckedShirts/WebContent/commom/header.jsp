@@ -158,6 +158,11 @@
 										</div>
 									</div>
 								</ul></li>
+								
+<%-- 							<c:when test="${sessionScope.greatch12}"> --%>
+
+								<li><a href="admin">Admin</a></li>
+				<%-- 			</c:when> --%>
 							<li><a href="products.html">Top</a></li>
 						</ul>
 					</div>

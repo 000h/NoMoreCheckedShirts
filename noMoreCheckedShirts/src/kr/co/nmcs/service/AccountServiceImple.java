@@ -22,6 +22,8 @@ public class AccountServiceImple implements AccountService {
 	@Override
 	public void register(AccountDTO adto) {
 		// TODO Auto-generated method stub
+		System.out.println("from accountService imple");
+		System.out.println(adto.getName());
 		daoA.register(adto);
 
 	}

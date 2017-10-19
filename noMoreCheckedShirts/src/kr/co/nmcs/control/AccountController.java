@@ -93,7 +93,7 @@ public class AccountController {
 
 	@RequestMapping("/registerForm")
 	public String registerForm() {
-
+		System.out.println("register Form print");
 		return "register";
 	}
 	
@@ -107,6 +107,7 @@ public class AccountController {
 	
 	@RequestMapping("/registerOk")
 	public String registerOk() {
+		System.out.println("registerOk print test");
 		return "registerOk";
 	}
 

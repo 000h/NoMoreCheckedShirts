@@ -22,6 +22,7 @@ public class AccountDaoImple implements AccountDao {
 	@Override
 	public void register(AccountDTO adto) {
 		// TODO Auto-generated method stub
+		System.out.println(adto.getName());
 		ss.insert("kr.co.nmcs.account.register", adto);
 
 	}

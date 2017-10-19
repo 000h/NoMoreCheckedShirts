@@ -24,47 +24,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript">
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/* 회원가입폼 */
-	
-	
-	
-	
 	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
-
-
-
 
 
 <script src="js/jquery.min.js"></script>
@@ -107,13 +71,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			/*         document.loginform.pw.focus(); */
 		} else if (password == password_ok) {
 			console.log("일단 눌림");
+			/* 171019 JS 회원가입 registerOk 여기를 고쳐야됨 */
 			document.register.setAttribute("action", "registerOk");
 			document.register.submit();
 
 		}
 		/* return; */
 	}   //pass() end
-	
+/* 	
 	function idCk(){
 		console.log("일단눌림");
 		var id = document.getElementById("id").value;
@@ -122,16 +87,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		console.log(${msg});
 		
 		
-	}
-	
-
-	
-	
-	
-	
-	
-	
+	} */
+		
 </script>
+
+
+
+
+<script type="text/javascript">
+
+	$(function(){
+		// $("#btn").on("이벤트명", 함수명);
+		$("#btn").on("click", function(){
+			// console.log("메세지 출력");
+			console.log($("#num1").val("은하수"));
+			//val 에 아무것도 없으면 글자를 가져오는 것(getter), 뭔가를 써주면 글자 입력(setter)
+		});
+	})
+	</script>
+
 
 
 
@@ -176,9 +150,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 							<div class="wow fadeInLeft" data-wow-delay="0.4s">
-								<span>ID<label>*</label></span> 
-								<input type="text" id="id"
-									name="id"> <input type="button" value="ID 중복확인" onclick ="idCk()"/>
+								<span>ID<label>*</label></span> <input type="text" id="id"
+									name="id"> <input type="button" name = "btn"value="ID 중복확인"
+									onclick="idCk()" />
 							</div>
 							<div class="wow fadeInRight" data-wow-delay="0.4s">
 								<span>Name<label>*</label></span> <input type="text" id="name"

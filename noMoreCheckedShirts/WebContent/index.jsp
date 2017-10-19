@@ -18,11 +18,13 @@
 			<div class="banner-grids">
 				<div class="col-md-6 banner-grid">
 					<h2>이제 고민 하지 마세요</h2>
-					<p>언제나 채크무늬 남방을 입던 당신. 이제 우리에게 당신의 코디를 맡겨주세요.</p>
+					<p>언제나 체크무늬 남방을 입던 당신. 이제 우리에게 당신의 코디를 맡겨주세요.</p>
 					<a href="products.html" class="button"> shop now </a>
 				</div>
 				<div class="col-md-6 banner-grid1">
-					<img src="images/mainp.png" class="img-responsive" alt="" />
+					<!-- <img src="images/mainp.png" class="img-responsive" alt="" /> -->
+					<!-- 171019 JS edit -->
+					<img src="images/mainp.jpg" class="img-responsive" alt="" />
 				</div>
 				<div class="clearfix"></div>
 			</div>
